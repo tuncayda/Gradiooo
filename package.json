@@ -4,7 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "scss": "node-sass --watch scss -o css"
+    "watch-scss": "node-sass --watch scss -o css",
+    "start": "npm run watch-scss & watchify ./scripts/main.js -o bundle.js & live-server --no-browser"
   },
   "author": "Tuncay Dagdelen",
   "license": "ISC",
@@ -13,6 +14,7 @@
     "node-sass": "^4.14.1"
   },
   "devDependencies": {
-    "browserify": "^16.5.1"
+    "browserify": "^16.5.1",
+    "watchify": "^3.11.1"
   }
 }
