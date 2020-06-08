@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap" rel="stylesheet">
+    <link rel="icon" href="./img/favicon.svg" sizes="any" type="image/svg+xml">
+    <title>Gradiooo</title>
+</head>
+<body>
+    <nav class="navigation">
+    </nav>
+    <header class="landing-page">
+        <div class="logo">
+            <img src="../img/gradiooo.svg" alt="The logo of Gradiooo" class="logo-image">
+            <p class="logo-caption">A source of inspiration for beautiful gradients</p>
+        </div>
+    </header>
+    <div class="toolbar hidden" id="toolbar">
+        <div class="toolbar__logo">
+            <img src="../img/gradiooo.svg" alt="The logo of Gradiooo" class="toolbar__logo--icon">
+        </div>
+        <ul class="toolbar__icons">
+            <li class="dropdown">
+                <a href="#"><img src="./img/gradient.svg" alt="Gradient icon" class="toolbar__icon"></a>
+                <p class="toolbar__icon-text">Gradient</p>
+                <ul class="dropdown__content">
+                    <div class="dropdown__items">
+                        <div class="dropdown__item">
+                            <img src="./img/solid.svg" alt="Solid color icon">
+                            <span>Solid</span>
+                        </div>
+                        <div class="dropdown__item">
+                            <img src="./img/mesh.svg" alt="Mesh icon">
+                            <span>Mesh</span>
+                        </div>
+                    </div>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#"><img src="./img/color.svg" alt="Color icon" class="toolbar__icon"></a>
+                <p class="toolbar__icon-text">Color</p>
+                <ul style="width: auto;" class="dropdown__content">
+                    <div class="dropdown__colors">
+                        <div class="dropdown__color">
+                            <div class="dropdown__circle" id="red"></div>
+                        </div>
+                        <div class="dropdown__color">
+                            <div class="dropdown__circle" id="orange"></div>
+                        </div>
+                        <div class="dropdown__color">
+                            <div class="dropdown__circle" id="yellow"></div>
+                        </div>
+                        <div class="dropdown__color">
+                            <div class="dropdown__circle" id="green"></div>
+                        </div>
+                        <div class="dropdown__color">
+                            <div class="dropdown__circle" id="turquoise"></div>
+                        </div>
+                        <div class="dropdown__color">
+                            <div class="dropdown__circle" id="blue"></div>
+                        </div>
+                        <div class="dropdown__color">
+                            <div class="dropdown__circle" id="magenta"></div>
+                        </div>
+                        <div class="dropdown__color">
+                            <div class="dropdown__circle" id="white"></div>
+                        </div>
+                        <div class="dropdown__color">
+                            <div class="dropdown__circle" id="black"></div>
+                        </div>
+                    </div>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#"><img src="./img/column.svg" alt="Column icon" class="toolbar__icon"></a>
+                <p class="toolbar__icon-text">Column</p>
+                <ul class="dropdown__content">
+                    <div class="dropdown__items">
+                        <div class="dropdown__item">
+                            <img src="./img/row.svg" alt="Solid color icon">
+                            <span>Row</span>
+                        </div>
+                    </div>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#"><img src="./img/sort.svg" alt="Sort icon" class="toolbar__icon"></a>
+                <p class="toolbar__icon-text">Sort</p>
+                <ul class="dropdown__content">
+                    <div class="dropdown__items">
+                        <div class="dropdown__item">
+                            <span>Popularity</span>
+                        </div>
+                        <div class="dropdown__item">
+                            <span>Rating</span>
+                        </div>
+                    </div>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <main class="main__content">
+        <div class="color" id="">
+            <p class="color__title">
+                Moonlight
+            </p>
+            <div class="color__container">
+                <div class="color__shape"></div>
+                <div class="color__side">
+                    <div class="color__hexcodes">
+                        <span class="color__hexcode" onmouseover="colorMouseOver(this);" onmouseout="colorMouseOut(this);" onclick="colorMouseClick(this);">00F5A0</span>
+                        <span class="color__hexcode" onmouseover="colorMouseOver(this);" onmouseout="colorMouseOut(this);" onclick="colorMouseClick(this);">00D9F5</span>
+                    </div>
+                    <div class="color__side--divider"></div>
+                    <div class="color__likes scale"><img src="../img/likes.svg" alt="Likes icon"></div>
+                    <div class="color__side--divider"></div>
+                    <div class="color__downloads scale"><img src="../img/download.svg" alt="Download icon"></div>
+                </div>
+            </div>
+        </div>
+        <div class="color" id="">
+            <p class="color__title">
+                Cherry
+            </p>
+            <div class="color__container">
+                <div class="color__shape shape-2"></div>
+                <div class="color__side">
+                    <div class="color__hexcodes">
+                        <span class="color__hexcode" onmouseover="colorMouseOver(this);" onmouseout="colorMouseOut(this);" onclick="colorMouseClick(this);">F15F79</span>
+                        <span class="color__hexcode" onmouseover="colorMouseOver(this);" onmouseout="colorMouseOut(this);" onclick="colorMouseClick(this);">C84E89</span>
+                    </div>
+                    <div class="color__side--divider"></div>
+                    <div class="color__likes scale"><img src="./img/likes.svg" alt="Likes icon"></div>
+                    <div class="color__side--divider"></div>
+                    <div class="color__downloads scale"><img src="./img/download.svg" alt="Download icon"></div>
+                </div>
+            </div>
+        </div>
+        <div class="color" id="">
+            <p class="color__title">
+                Candy
+            </p>
+            <div class="color__container">
+                <div class="color__shape shape-3"></div>
+                <div class="color__side">
+                    <div class="color__hexcodes">
+                        <span class="color__hexcode" onmouseover="colorMouseOver(this);" onmouseout="colorMouseOut(this);" onclick="colorMouseClick(this);">FC00FF</span>
+                        <span class="color__hexcode" onmouseover="colorMouseOver(this);" onmouseout="colorMouseOut(this);" onclick="colorMouseClick(this);">00DBDE</span>
+                    </div>
+                    <div class="color__side--divider"></div>
+                    <div class="color__likes scale"><img src="./img/likes.svg" alt="Likes icon"></div>
+                    <div class="color__side--divider"></div>
+                    <div class="color__downloads scale"><img src="./img/download.svg" alt="Download icon"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- <button>
+    </button> -->
+    <footer class="footer">
+        <div class="footer__social">
+            <span>social media stuff here maybe?</span>
+        </div>
+        <div class="footer__text">
+            <span>Created with</span>
+            <div><img src="./img/red-heart.svg" alt="Heart icon" class="footer__heart"></div>
+            <span>by <a href="https://www.tuncay.se" class="footer__href">tuncay</a></span>
+        </div>
+        <div class="footer__copyright">&copy; 2020 Tuncay Dagdelen</div>
+    </footer>
+    <script>
+        /*********************************
+         JS for toolbar and color cards
+         *********************************
+         */
+
+        // https://www.w3schools.com/charsets/ref_emoji.asp
+        let emojis = ['129409','9757', '9969', '9996','11088','127801','127881'];
+
+        function randomSelect() {
+            return emojis[Math.floor(Math.random() * emojis.length)];
+        }
+
+        // Style hexcode on hover
+        function colorMouseOver(e) {
+            e.style.borderBottom = "2px solid #" + e.innerText;
+            e.classList.add('pointer');
+        }
+        
+        function colorMouseOut(e) {
+            e.style.borderBottom = "none";
+        }
+
+        // Show confirmation after user clicks on hexcode
+        function colorMouseClick(e) {
+            let hexcode = e.innerText;
+            copyToClipboard(hexcode);
+            // e.innerText = 'Copied';
+            e.innerHTML = '<p>Copied &#128077;</p>';
+            setTimeout(() => {
+                e.innerText = hexcode;
+            }, 1500);
+        }
+
+        function copyToClipboard(str) {
+            var textArea = document.createElement("textarea");
+            textArea.value = str;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("Copy");
+            textArea.remove();
+        }
+
+        /*********************************
+         Database connections
+         *********************************
+         */
+         let LOGO_ID = 'toolbar';
+let element = document.getElementById(LOGO_ID);
+
+window.addEventListener('scroll', function(event) {
+    if (isInViewport()) {
+        element.classList.remove('hidden');
+        element.classList.add('fade-in-element');
+    }
+}, false);
+
+// Returns true if element is within viewport
+function isInViewport() {
+    let bounding = element.getBoundingClientRect();
+
+    // Get browser inner width and height with fallback
+    let innerWidth = (window.innerWidth || document.documentElement.clientWidth);
+    let innerHeight = (window.innerHeight || document.documentElement.clientHeight);
+
+    // Check if element is within viewport
+    return (
+        bounding.top >=  0              &&
+        bounding.left >= 0             &&
+        bounding.right <= innerWidth   &&
+        bounding.bottom <= innerHeight
+    );
+}
+        
+    </script>
+</body>
+</html>

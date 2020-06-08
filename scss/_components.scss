@@ -1,0 +1,62 @@
+@import "variables";
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    &-image {
+        width: 7.5rem;
+    }
+    
+    &-caption {
+        margin-top: 5rem;
+        font-size: $fs-large;
+        font-weight: 400;
+        color: $color-grey-dark;
+    }
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.no-pointer {
+    cursor: default;
+}
+
+#red {
+    background-color: #FF4949;
+}
+
+#orange {
+    background-color: #E95E1D;
+}
+
+#yellow {
+    background-color: #FED130;
+}
+
+#green {
+    background-color: #5DDA71;
+}
+
+#turquoise {
+    background-color: #0BF4D8;
+}
+
+#blue {
+    background-color: #5596F8;
+}
+
+#magenta {
+    background-color: #EC91EE;
+}
+
+#white {
+    background-color: #FAFAFA;
+}
+
+#black {
+    background-color: #333333;
+}

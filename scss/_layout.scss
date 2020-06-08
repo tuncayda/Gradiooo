@@ -1,0 +1,237 @@
+@import 'variables';
+
+body {
+    background-color: $color-grey-light;
+}
+
+.landing-page {
+    display: flex;
+    background-color: $color-white;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.toolbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: $color-white;
+    color: $color-grey-dark;
+    font-size: 1.6rem;
+    position: sticky;
+    top: 0;
+
+    &__icons {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        list-style: none;
+        height: 6.4rem;
+        width: 100vw;
+    }
+
+    &__icons li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: $horizontal-spacing;
+    }
+    
+    &__icon {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
+    &__logo {
+        margin-left: 4rem;
+
+        &--icon {
+            width: 2.4rem;
+        }
+    }
+}
+
+.main__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.color {
+    width: 110.2rem;
+    height: 43.2rem;
+    margin-top: 8rem;
+    background-color: $color-white;
+    border-radius: 2rem;
+    
+    &__title {
+        margin-top: 2.2rem;
+        margin-left: 3.2rem;
+        font-size: $fs-medium;
+        color: $color-grey-dark;
+    }
+    
+    &__container {
+        display: flex;
+        height: 80%;
+    }
+
+    &__shape {
+        width: 80%;
+        height: 32.4rem;
+        background-image: linear-gradient(to bottom, rgba(0, 245, 160, 1), rgba(0, 217, 245, 1));
+        border-radius: 2rem;
+        margin-left: 3.2rem;
+        margin-top: 2.2rem;
+    }
+    
+    &__side {
+        width: 20%;
+        margin-top: 2.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        font-size: $fs-medium;
+        color: $color-grey-dark;
+
+        &--divider {
+            border-top: 1px solid $color-grey-lighter;
+            width: 20%;
+            margin: 2rem auto;
+        }
+    }
+    
+    &__hexcodes {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+// for testing purposes only, remove before prod
+.shape-2 {
+    background-image: linear-gradient(to bottom, rgba(200, 78, 137, 1), rgba(241, 95, 121, 1));
+}
+.shape-3 {
+    background-image: linear-gradient(to right, rgba(252, 0, 255, 1), rgba(0, 219, 222, 1));
+}
+
+.dropdown {
+    transition: all $transition-speed-normal;
+    width: 4rem;
+    position: relative;
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        padding: $horizontal-spacing-small 0;
+        border-top: 2px solid $color-white;
+        
+        &:hover {
+            background-color: $color-grey-lighter;
+        }
+    }
+
+    &__colors {
+        display: flex;
+        padding: 0 2rem;
+    }
+
+    &__color {
+        transform: all .4s;
+
+        &:not(:last-child) {
+            margin-right: 2rem;
+        }
+    }
+
+    &__circle {
+        transition: all .2s;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+
+        &:hover {
+            transform: scale(1.2, 1.2);
+        }
+    }
+}
+
+.dropdown:hover {
+    cursor: pointer;
+    width: 11rem;
+    padding: 1rem 2rem 0 2rem;
+    background-color: $color-grey-light-dark;
+}
+
+.dropdown__content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    min-height: 6.4rem;
+    background-color: $color-grey-light-dark;
+    margin-top: 5.5rem;
+    padding-top: 1.2rem;
+}
+
+.dropdown:hover .dropdown__content {
+    display: block;
+}
+
+.test {
+    width: 20px;
+    height: 20px;
+    background-color: magenta;
+    margin: 4px 20px 4px 50%;
+    transform: translateX(-50%);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 8rem;
+    margin-top: 80rem;
+    background-color: $color-grey-dark;
+    font-size: $fs-small;
+    color: $color-grey-light;
+
+    &__copyright {
+        margin-right: 2rem;
+    }
+
+    &__social {
+        margin-left: 2rem;
+
+        & > *:not(:first-child) {
+            margin-left: 2rem;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: row;
+        
+        & > * {
+            margin-left: 1rem;
+        }
+    }
+
+    & a:link,
+    & a:visited {
+        color: $color-grey-light;
+    }
+    
+    & a:hover {
+        color: $color-primary;
+    }
+}
