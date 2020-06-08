@@ -2,13 +2,17 @@
   "name": "gradiooo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "scss": "node-sass --watch scss -o css"
   },
   "author": "Tuncay Dagdelen",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "node-sass": "^4.14.1"
+  },
+  "devDependencies": {
+    "browserify": "^16.5.1"
   }
 }
