@@ -5,8 +5,7 @@
   "main": "main.js",
   "scripts": {
     "watch-scss": "node-sass --watch scss -o css",
-    "watch-js": "watchify ./scripts/main.js -o bundle.js",
-    "start": "npm run watch-scss & npm run watch-js & live-server --no-browser"
+    "start": "npm run watch-scss & live-server --no-browser"
   },
   "author": "Tuncay Dagdelen",
   "license": "ISC",
