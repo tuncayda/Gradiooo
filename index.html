@@ -212,19 +212,16 @@
             textArea.remove();
         }
 
-        /*********************************
-         Database connections
-         *********************************
-         */
-         let LOGO_ID = 'toolbar';
+let LOGO_ID = 'toolbar';
 let element = document.getElementById(LOGO_ID);
 
-window.addEventListener('scroll', function(event) {
-    if (isInViewport()) {
-        element.classList.remove('hidden');
-        element.classList.add('fade-in-element');
-    }
-}, false);
+
+    window.addEventListener('scroll', function(event) {
+        if (isInViewport(element)) {
+            element.classList.remove('hidden');
+            element.classList.add('fade-in-element');
+        }
+    }, false);
 
 // Returns true if element is within viewport
 function isInViewport() {

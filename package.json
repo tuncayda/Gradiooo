@@ -2,11 +2,11 @@
   "name": "gradiooo",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "app.js",
   "scripts": {
     "watch-scss": "node-sass --watch scss -o public/css",
     "watch-js": "watchify ./public/scripts/main.js -o bundle.js",
-    "start": "npm run watch-scss & node server.js"
+    "start": "npm run watch-scss & node app.js"
   },
   "author": "Tuncay Dagdelen",
   "license": "ISC",
@@ -15,6 +15,7 @@
     "express": "^4.17.1",
     "live-server": "^1.2.1",
     "mongoose": "^5.9.18",
+    "morgan": "^1.10.0",
     "node-sass": "^4.14.1"
   },
   "devDependencies": {
