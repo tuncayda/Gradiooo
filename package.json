@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "watch-scss": "node-sass --watch scss -o public/css",
-    "start": "npm run watch-scss & nodemon app.js"
+    "start": "npm run watch-scss & nodemon server.js"
   },
   "author": "Tuncay Dagdelen",
   "license": "ISC",

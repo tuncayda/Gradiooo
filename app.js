@@ -1,111 +1,28 @@
+const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
-const path = require('path');
 const morgan = require('morgan');
 const app = express();
 require('dotenv').config();
+const colorRouter = require('./routes/colorRoutes');
+const userRouter = require('./routes/userRoutes');
 
-// Variables
-const DB_URI = process.env.DATABASE_URI;
-const port = process.env.PORT || 8080;
-
-// Serve assets e.g. js, css, img
+// Middlewares for serving assets, logging responses and parsing json
 app.use(express.static('public'));
-
-// Print response data
 app.use(morgan('dev'));
-
-// Parse json
 app.use(express.json());
-
-// Controllers (handlers)
-const getAllColors = (req, res) => {
-};
-
-const getColor = (req, res) => {
-};
-
-const createColor = (req, res) => {
-};
-
-const updateColor = (req, res) => {
-};
-
-const deleteColor = (req, res) => {
-};
-
-const getAllUsers = (req, res) => {
-    res.status(500).json({
-        status: 'error',
-        message: 'This route is not yet defined'
-    });
-};
-
-const getUser = (req, res) => {
-    res.status(500).json({
-        status: 'error',
-        message: 'This route is not yet defined'
-    });
-};
-
-const createUser = (req, res) => {
-    res.status(500).json({
-        status: 'error',
-        message: 'This route is not yet defined'
-    });
-};
-
-const updateUser = (req, res) => {
-    res.status(500).json({
-        status: 'error',
-        message: 'This route is not yet defined'
-    });
-};
-
-const deleteUser = (req, res) => {
-    res.status(500).json({
-        status: 'error',
-        message: 'This route is not yet defined'
-    });
-};
 
 // Route for serving html
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-const colorRouter = express.Router();
-const userRouter = express.Router();
-
 // Mounting routers to endpoints
-app.use('/api/v1/colors', colorRouter);
 app.use('/api/v1/users', userRouter);
-
-// Routes for handling colors
-colorRouter
-    .route('/')
-    .get(getAllColors)
-    .post(createColor);
-
-colorRouter
-    .route('/:id')
-    .get(getColor)
-    .patch(updateColor)
-    .delete(deleteColor);
-
-// Routes for handling users
-userRouter
-    .route('/').
-    get(getAllUsers).
-    post(createUser);
-
-userRouter
-    .route('/:id')
-    .get(getUser)
-    .patch(updateUser)
-    .delete(deleteUser);
+app.use('/api/v1/colors', colorRouter);
 
 // Connect to db
+// const DB_URI = process.env.DATABASE_URI;
 // mongoose.connect(DB_URI, {
 //     useUnifiedTopology:true,
 //     useNewUrlParser: true,
@@ -165,7 +82,4 @@ userRouter
 //     console.log(err);
 // });
 
-// Start server
-app.listen(port, function() {
-    console.log(`Listening on port ${port}`);
-}); 
+module.exports = app;
