@@ -5,6 +5,8 @@ const morgan = require('morgan');
 const app = express();
 require('dotenv').config();
 
+// Variables
+const DB_URI = process.env.DATABASE_URI;
 const port = process.env.PORT || 8080;
 
 // Serve assets e.g. js, css, img
@@ -13,50 +15,95 @@ app.use(express.static('public'));
 // Print response data
 app.use(morgan('dev'));
 
-// Serve html
+// Parse json
+app.use(express.json());
+
+// Controllers (handlers)
+const getAllColors = (req, res) => {
+};
+
+const getColor = (req, res) => {
+};
+
+const createColor = (req, res) => {
+};
+
+const updateColor = (req, res) => {
+};
+
+const deleteColor = (req, res) => {
+};
+
+const getAllUsers = (req, res) => {
+    res.status(500).json({
+        status: 'error',
+        message: 'This route is not yet defined'
+    });
+};
+
+const getUser = (req, res) => {
+    res.status(500).json({
+        status: 'error',
+        message: 'This route is not yet defined'
+    });
+};
+
+const createUser = (req, res) => {
+    res.status(500).json({
+        status: 'error',
+        message: 'This route is not yet defined'
+    });
+};
+
+const updateUser = (req, res) => {
+    res.status(500).json({
+        status: 'error',
+        message: 'This route is not yet defined'
+    });
+};
+
+const deleteUser = (req, res) => {
+    res.status(500).json({
+        status: 'error',
+        message: 'This route is not yet defined'
+    });
+};
+
+// Route for serving html
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-// Get db connection string
-const DB_URI = process.env.DATABASE_URI;
+const colorRouter = express.Router();
+const userRouter = express.Router();
 
-// Handlers
-const getAllColors = (req, res) => {
-    // TODO
-};
+// Mounting routers to endpoints
+app.use('/api/v1/colors', colorRouter);
+app.use('/api/v1/users', userRouter);
 
-const getColor = (req, res) => {
-    // TODO
-};
+// Routes for handling colors
+colorRouter
+    .route('/')
+    .get(getAllColors)
+    .post(createColor);
 
-const createColor = (req, res) => {
-    // TODO
-};
-
-const updateColor = (req, res) => {
-    // TODO
-};
-
-const deleteColor = (req, res) => {
-    // TODO
-};
-
-// Routes
-// app.get('/api/v1/colors', getAllColors);
-// app.post('/api/v1/colors', createColor);
-// app.get('/api/v1/colors/:id', getColor);
-// app.patch('/api/v1/colors/:id', updateColor);
-// app.delete('/api/v1/colors/:id', deleteColor);
-
-app.route('/api/v1/colors')
-.get(getAllColors)
-.post(createColor);
-
-app.route('/api/v1/colors/:id')
+colorRouter
+    .route('/:id')
     .get(getColor)
     .patch(updateColor)
     .delete(deleteColor);
+
+// Routes for handling users
+userRouter
+    .route('/').
+    get(getAllUsers).
+    post(createUser);
+
+userRouter
+    .route('/:id')
+    .get(getUser)
+    .patch(updateUser)
+    .delete(deleteUser);
 
 // Connect to db
 // mongoose.connect(DB_URI, {
