@@ -19,7 +19,17 @@ exports.getAllColors = async (req, res) => {
         if(req.query.sort) {
             query = query.sort(req.query.sort);
         } else {
+            // Default
             query = query.sort('-created');
+        }
+
+        // Field limiting
+        if (req.query.fields) {
+            const fields = req.query.fields.split(',').join(' ');
+            query = query.select(fields);
+        } else {
+            // Default (exclude mongodbs _v variable)
+            query = query.select('-__v');
         }
         
         // Execute query
