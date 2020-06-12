@@ -52,7 +52,24 @@ exports.createColor = async (req, res) => {
     }
 };
 
-exports.updateColor = (req, res) => {
+exports.updateColor = async (req, res) => {
+    try {
+        const color = await Color.findByIdAndUpdate(req.params.id, req.body, {
+            new: true,
+            runValidators: true
+        });
+        res.status(200).json({
+            status: 'Success',
+            data: {
+                color
+            }
+        });
+    } catch (err) {
+        res.status(400).json({
+            status: 'failed',
+            message: err
+        });
+    }
 };
 
 exports.deleteColor = (req, res) => {
