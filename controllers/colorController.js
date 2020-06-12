@@ -31,7 +31,24 @@ exports.getAllColors = async (req, res) => {
             // Default (exclude mongodbs _v variable)
             query = query.select('-__v');
         }
+
+        // Pagination
+
+        // Covert string to number
+        const page = req.query.page * 1 || 1;
+        const limit = req.query.limit * 1 || 100;
+        const skip = (page - 1) * limit;
+
+        // Example: page=2&limit=10 means 1-10 on page 1, 11-20 on page 20 etc
+        query = query.skip(skip).limit(limit);
         
+        if (req.query.page) {
+            const numColors = await Color.countDocuments();
+            if (skip >= numColors) {
+                throw new Error('This page does not exist');
+            }
+        }
+
         // Execute query
         const colors = await query;
         res.status(200).json({
