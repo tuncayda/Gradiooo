@@ -18,6 +18,11 @@ const colorSchema = new mongoose.Schema({
         required: true,
         enum: ['red', "orange", "yellow", 'green', 'turquoise', 'blue', 'magenta', 'white', 'black']
     },
+    type: {
+        type: String,
+        required: true,
+        enum : ['gradient', 'solid', 'mesh']
+    },
     colors: {
         type: [String],
         required: true
