@@ -18,6 +18,8 @@ exports.getAllColors = async (req, res) => {
         // Sorting
         if(req.query.sort) {
             query = query.sort(req.query.sort);
+        } else {
+            query = query.sort('-created');
         }
         
         // Execute query
