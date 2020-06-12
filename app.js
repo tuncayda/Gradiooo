@@ -3,13 +3,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const app = express();
-require('dotenv').config();
 const colorRouter = require('./routes/colorRoutes');
 const userRouter = require('./routes/userRoutes');
 
 // Middlewares for serving assets, logging responses and parsing json
-app.use(express.static('public'));
-app.use(morgan('dev'));
+app.use(express.static(`${__dirname}/public`));
+if(process.env.NODE_ENV === 'development') {
+    app.use(morgan('dev'));
+}
 app.use(express.json());
 
 // Route for serving html
