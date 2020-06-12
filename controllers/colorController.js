@@ -13,7 +13,12 @@ exports.getAllColors = async (req, res) => {
         queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
 
         // Filter
-        const query = Color.find(JSON.parse(queryStr));
+        let query = Color.find(JSON.parse(queryStr));
+
+        // Sorting
+        if(req.query.sort) {
+            query = query.sort(req.query.sort);
+        }
         
         // Execute query
         const colors = await query;
