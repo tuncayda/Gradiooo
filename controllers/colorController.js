@@ -1,14 +1,38 @@
 const Color = require('./../models/colorModel');
 
 // Handlers
-exports.getAllColors = (req, res) => {
-    res.status(500).json({
-        status: 'error',
-        message: 'Color route is not yet defined'
-    });
+exports.getAllColors = async (req, res) => {
+    try {
+        const colors = await Color.find();
+        res.status(200).json({
+            status: 'success',
+            data: {
+                colors
+            }
+        });
+    } catch (err) {
+        res.status(404).json({
+            status: 'failed',
+            message: err
+        });
+    }
 };
 
-exports.getColor = (req, res) => {
+exports.getColor = async (req, res) => {
+    try {
+        const color = await Color.findById(req.params.id);
+        res.status(200).json({
+            status: 'success',
+            data: {
+                color
+            }
+        });
+    } catch (err) {
+        res.status(404).json({
+            status: 'fail',
+            message: err
+        });
+    }
 };
 
 exports.createColor = async (req, res) => {
