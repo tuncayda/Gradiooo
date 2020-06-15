@@ -1,5 +1,6 @@
 const express = require('express');
 const colorController = require('./../controllers/colorController');
+const authController = require('./../controllers/authController');
 
 // Routes
 const router = express.Router();
@@ -12,7 +13,7 @@ router.param('id', (req, res, next, val) => {
 
 router
     .route('/')
-    .get(colorController.getAllColors)
+    .get(authController.protect, colorController.getAllColors)
     .post(colorController.createColor);
 
 router

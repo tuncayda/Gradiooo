@@ -1,9 +1,11 @@
 const path = require('path');
-const express = require('express');
 const morgan = require('morgan');
-const app = express();
+const express = require('express');
+
 const colorRouter = require('./routes/colorRoutes');
 const userRouter = require('./routes/userRoutes');
+
+const app = express();
 
 // Middlewares for serving assets, logging responses and parsing json
 app.use(express.static(`${__dirname}/public`));
