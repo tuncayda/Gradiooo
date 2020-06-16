@@ -20,6 +20,9 @@ router
     .route('/:id')
     .get(colorController.getColor)
     .patch(colorController.updateColor)
-    .delete(colorController.deleteColor);
+    .delete(
+        authController.protect, 
+        authController.restrictTo('admin'), 
+        colorController.deleteColor);
 
 module.exports = router;

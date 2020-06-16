@@ -17,7 +17,8 @@ exports.signup = async (req, res, next) => {
             email: req.body.email,
             password: req.body.password,
             passwordConfirm: req.body.passwordConfirm,
-            passwordChangedAt: req.body.passwordChangedAt
+            passwordChangedAt: req.body.passwordChangedAt,
+            role: req.body.role
         });
 
         const token = signToken(newUser._id);
@@ -91,8 +92,8 @@ exports.protect = async (req, res, next) => {
     const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
 
     // Check if user still exists
-    const freshUser = await User.findById(decoded.id);
-    if (!freshUser) {
+    const currentUser = await User.findById(decoded.id);
+    if (!currentUser) {
         console.log('CONSOLE: User does not exists');
         res.status(401).json({
             status: 'failed',
@@ -101,15 +102,29 @@ exports.protect = async (req, res, next) => {
     }
 
     // Check if user changed password after the token was issued
-    if (freshUser.changedPasswordAfter(decoded.iat)) {
+    if (currentUser.changedPasswordAfter(decoded.iat)) {
         // TODO: Implement error handling
         res.status(401).json({
             status: 'failed',
             message: 'User recently changed password. Please log in again'
         });
     }
-    req.user = freshUser;
+    req.user = currentUser;
     
     // Grant access to protected route
     next();
+}
+
+exports.restrictTo = (...roles) => {
+    return (req, res, next) => {
+        // Roles an array eg ['admin', ...]
+        if (!roles.includes(req.user.role)) {
+            res.status(403).json({
+                status: 'failed',
+                message: 'You do not have permission to perform this action'
+            });
+        }
+
+        next();
+    }
 }
