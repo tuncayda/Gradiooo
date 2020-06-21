@@ -22,13 +22,13 @@ if(process.env.NODE_ENV === 'development') {
 app.use(express.json());
 
 // Route for serving html
-// app.get('/', (req, res) => {
-//     res.status(200).render('index');
-// });
-
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
+app.get('/', (req, res) => {
+    res.status(200).render('index');
 });
+
+// app.get('/', function(req, res) {
+//     res.sendFile(path.join(__dirname + '/index.html'));
+// });
 
 // Mounting routers to endpoints
 app.use('/api/v1/users', userRouter);
