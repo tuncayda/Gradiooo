@@ -2,7 +2,7 @@ const express = require('express');
 const colorController = require('./../controllers/colorController');
 const authController = require('./../controllers/authController');
 
-// Routes
+// Router obj
 const router = express.Router();
 
 // Router with parameter

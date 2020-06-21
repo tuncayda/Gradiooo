@@ -233,4 +233,10 @@ exports.updatePassword = async (req, res, next) => {
     await user.save();
 
     // Log the user in, send JWT
+    const token = signToken(user._id);
+
+    res.status(200).json({
+        status: 'success',
+        token
+    });
 }
