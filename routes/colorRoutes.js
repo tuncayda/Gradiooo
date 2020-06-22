@@ -13,7 +13,8 @@ router.param('id', (req, res, next, val) => {
 
 router
     .route('/')
-    .get(authController.protect, colorController.getAllColors)
+    .get(colorController.getAllColors)
+    // .get(authController.protect, colorController.getAllColors)
     .post(colorController.createColor);
 
 router

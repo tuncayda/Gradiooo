@@ -4,6 +4,7 @@ const express = require('express');
 
 const colorRouter = require('./routes/colorRoutes');
 const userRouter = require('./routes/userRoutes');
+const viewRouter = require('./routes/viewRoutes');
 
 const app = express();
 
@@ -22,15 +23,16 @@ if(process.env.NODE_ENV === 'development') {
 app.use(express.json());
 
 // Route for serving html
-app.get('/', (req, res) => {
-    res.status(200).render('index');
-});
+// app.get('/', (req, res) => {
+//     res.status(200).render('index');
+// });
 
 // app.get('/', function(req, res) {
 //     res.sendFile(path.join(__dirname + '/index.html'));
 // });
 
 // Mounting routers to endpoints
+app.use('/', viewRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/colors', colorRouter);
 
