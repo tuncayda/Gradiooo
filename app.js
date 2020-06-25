@@ -2,6 +2,7 @@ const path = require('path');
 const morgan = require('morgan');
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser')
 
 const colorRouter = require('./routes/colorRoutes');
 const userRouter = require('./routes/userRoutes');
@@ -17,12 +18,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public/scripts')));
+app.use(express.json());
+app.use(bodyParser.json());
 
 if(process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
 
-app.use(express.json());
 
 // Mounting routers to endpoints
 app.use('/', viewRouter);

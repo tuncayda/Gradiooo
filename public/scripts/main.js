@@ -67,10 +67,13 @@ const likeColor = async () => {
     await axios({
         method: 'post',
         url: 'http://localhost:8080/api/v1/colors/like',
-        data: '5ef0e7a0f61e6422d7d296d5'
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        data: {
+            id: '5ef0e7a0f61e6422d7d296d5'
+        }
     });
 }
 
-document.querySelectorAll('.like').forEach(e => {
-    e.addEventListener('click', likeColor);
-})
+document.querySelector('.like').addEventListener('click', likeColor);
