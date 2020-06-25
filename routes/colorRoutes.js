@@ -26,4 +26,8 @@ router
         authController.restrictTo('admin'), 
         colorController.deleteColor);
 
+router
+    .route('/like')
+    .post(colorController.likeColor);
+
 module.exports = router;

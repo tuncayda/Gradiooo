@@ -94,3 +94,14 @@ exports.deleteColor = async (req, res) => {
         });
     }
 };
+
+exports.likeColor = async (req, res) => {
+    try {
+        const color = await Color.findById('5ef39cafa815197112af6bfb');
+        color.rating = color.rating + 1;
+        color.save({ validateBeforeSave: false });
+        res.status(200).end();
+    } catch (err) {
+        res.send(err);
+    }
+}
