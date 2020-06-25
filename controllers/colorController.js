@@ -97,7 +97,7 @@ exports.deleteColor = async (req, res) => {
 
 exports.likeColor = async (req, res) => {
     try {
-        const color = await Color.findById('5ef0e7a0f61e6422d7d296d5');
+        const color = await Color.findById(req.body.id);
         color.rating = color.rating + 1;
         color.save({ validateBeforeSave: false });
         res.status(200).end();

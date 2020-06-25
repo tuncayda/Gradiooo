@@ -63,7 +63,8 @@ bounding.bottom <= innerHeight
 );
 }
 
-const likeColor = async () => {
+const likeColor = async (element) => {
+    const colorID = element.parentNode.parentNode.parentNode.parentNode.id;
     await axios({
         method: 'post',
         url: 'http://localhost:8080/api/v1/colors/like',
@@ -71,9 +72,7 @@ const likeColor = async () => {
             'Content-Type': 'application/json'
         },
         data: {
-            id: '5ef0e7a0f61e6422d7d296d5'
+            id: colorID
         }
     });
 }
-
-document.querySelector('.like').addEventListener('click', likeColor);

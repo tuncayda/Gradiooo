@@ -3,7 +3,7 @@ block colors
   main.main__content
   
     each color in colors
-      .color
+      .color(id=`${color._id}`)
         p.color__title
           | #{color.title}
         .color__container
@@ -14,7 +14,7 @@ block colors
               span.color__hexcode(onmouseover='colorMouseOver(this);' onmouseout='colorMouseOut(this);' onclick='colorMouseClick(this);') #{color.colors[1]}
             .color__side--divider
             .color__likes.scale
-              img(src='../img/likes.svg' alt='Likes icon' class='like')
+              img(src='../img/likes.svg' alt='Likes icon' class='like' onclick="likeColor(this)")
             .color__side--divider
             .color__downloads.scale
               img(src='../img/download.svg' alt='Download icon')
