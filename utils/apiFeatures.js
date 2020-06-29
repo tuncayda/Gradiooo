@@ -45,9 +45,10 @@ class APIFeatures {
     }
 
     // Build query to paginate
-    paginate() {
-        const page = this.queryString.page * 1 || 1;
-        const limit = this.queryString.limit * 1 || 100;
+    paginate(defaultLimit = 2, defaultPage = 1) {
+
+        const page = this.queryString.page * 1 || defaultPage;
+        const limit = this.queryString.limit * 1 || defaultLimit;
         const skip = (page - 1) * limit;
 
         // Example: page=2&limit=10 means 1-10 on page 1, 11-20 on page 20 etc

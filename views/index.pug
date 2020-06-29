@@ -8,6 +8,7 @@ head
   include _header
   include _toolbar
   block colors
+  button(onclick='loadColors(this)' style="background-color: #fafafa; width: 300px; height: 60px; border-radius: 8px; margin-left: 50%; transform: translateX(-50%); margin-top: 40px;") MORE
   include _footer
 script(src='https://unpkg.com/axios/dist/axios.min.js')
 script(src='main.js')
