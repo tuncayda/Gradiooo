@@ -1,5 +1,5 @@
 // Count how many pages the users has clicked for the pagination
-let currentPage = 1;
+let page = 1;
 
 // https://www.w3schools.com/charsets/ref_emoji.asp
 let emojis = ['129409','9757', '9969', '9996','11088','127801','127881'];
@@ -89,7 +89,7 @@ const likeColor = async (element) => {
 // })
 
 const loadColors = async () => {
-    currentPage += 1;
+    page += 1;
     await axios({
         method: 'GET',
         url: `?page=${page}`
