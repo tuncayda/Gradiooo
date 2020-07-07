@@ -1,0 +1,26 @@
+let LOGO_ID = 'toolbar';
+let element = document.getElementById(LOGO_ID);
+
+window.addEventListener('scroll', function(event) {
+    if (isInViewport(element)) {
+        element.classList.remove('hidden');
+        element.classList.add('fade-in-element');
+    }
+}, false);
+
+// Returns true if element is within viewport
+function isInViewport() {
+    let bounding = element.getBoundingClientRect();
+
+    // Get browser inner width and height with fallback
+    let innerWidth = (window.innerWidth || document.documentElement.clientWidth);
+    let innerHeight = (window.innerHeight || document.documentElement.clientHeight);
+
+    // Check if element is within viewport
+    return (
+        bounding.top >=  0              &&
+        bounding.left >= 0              &&
+        bounding.right <= innerWidth    &&
+        bounding.bottom <= innerHeight
+        );
+}

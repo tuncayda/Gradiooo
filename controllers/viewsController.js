@@ -10,10 +10,12 @@ exports.getColors = async (req, res) => {
             .limitFields()
             .paginate(req.query.limit, req.query.page);
         const colors = await features.query;
-        
+
         if(req.query.limit || req.query.page) {
+            // let numberOfColors = await Color.estimatedDocumentCount();
             res.status(200).json({
-                colors
+                colors,
+                // numberOfColors
             })
         } else {
             res.status(200).render('colors', {
@@ -26,14 +28,4 @@ exports.getColors = async (req, res) => {
             message: err
         });
     }
-    // // Get colors data
-    // const colors = await Color.find();
-
-    // // Build template
-    
-
-    // // Render that template using colors data
-    // res.status(200).render('colors', {
-    //     colors
-    // });
 }

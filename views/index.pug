@@ -8,7 +8,9 @@ head
   include _header
   include _toolbar
   block colors
-  button(onclick='loadColors(this)' style="background-color: #fafafa; width: 300px; height: 60px; border-radius: 8px; margin-left: 50%; transform: translateX(-50%); margin-top: 40px;") MORE
+  button(id='loadMore' onclick='loadColors(this)' style="background-color: #fafafa; width: 300px; height: 60px; border-radius: 8px; margin-left: 50%; transform: translateX(-50%); margin-top: 40px; z-index: -1;") MORE
   include _footer
 script(src='https://unpkg.com/axios/dist/axios.min.js')
+script(src='bounding.js')
+script(src='color.js')
 script(src='main.js')
