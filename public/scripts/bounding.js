@@ -1,6 +1,17 @@
 let LOGO_ID = 'toolbar';
 let element = document.getElementById(LOGO_ID);
 
+var prevPos = window.pageYOffset;
+window.onscroll = function() {
+    var currentPos = window.pageYOffset;
+    if (prevPos > currentPos) {
+        element.style.top = '0';
+    } else {
+        element.style.top = '-100px';
+    }
+    prevPos = currentPos;
+}
+
 window.addEventListener('scroll', function(event) {
     if (isInViewport(element)) {
         element.classList.remove('hidden');
