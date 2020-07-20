@@ -7,7 +7,7 @@ block colors
         p.color__title
           | #{color.title}
         .color__container
-          .color__shape(style='background-image: linear-gradient(to bottom, #' + `${color.colors[0]}` + ',#' + `${color.colors[1]}` + ')')
+          .color__shape(onclick='openOverlay(this)' style='background-image: linear-gradient(to bottom, #' + `${color.colors[0]}` + ',#' + `${color.colors[1]}` + ')')
           .color__side
             .color__hexcodes
               span.color__hexcode(onmouseover='colorMouseOver(this);' onmouseout='colorMouseOut(this);' onclick='colorMouseClick(this);') #{color.colors[0]}

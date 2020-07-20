@@ -121,7 +121,12 @@ body {
     height: 32.4rem;
     border-radius: 2rem;
     margin-left: 3.2rem;
-    margin-top: 2.2rem; }
+    margin-top: 2.2rem;
+    cursor: pointer;
+    transition: box-shadow .4s; }
+    .color__shape:hover {
+      box-shadow: 2px 2px 16px rgba(0, 0, 20, 0.15);
+      transition: box-shadow .4s; }
     @media (max-width: 1120px) {
       .color__shape {
         height: 15rem;
@@ -213,13 +218,6 @@ body {
 .dropdown:hover .dropdown__content {
   display: block; }
 
-.test {
-  width: 20px;
-  height: 20px;
-  background-color: magenta;
-  margin: 4px 20px 4px 50%;
-  transform: translateX(-50%); }
-
 .footer {
   display: flex;
   justify-content: space-between;
@@ -258,6 +256,19 @@ body {
     font-size: 2.8rem;
     font-weight: 400;
     color: #333333; }
+
+.overlay {
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  opacity: 100%;
+  overflow-x: hidden;
+  cursor: pointer;
+  transition: all .4s; }
 
 .pointer {
   cursor: pointer; }

@@ -1,3 +1,15 @@
+function openOverlay(e) {
+    let overlay = document.getElementById('overlay');
+    overlay.classList.add('overlay');
+    overlay.style.backgroundImage = e.style.backgroundImage;
+    overlay.style.display = 'block';
+}
+
+function closeOverlay() {
+    document.getElementById('overlay').style.display = 'none';
+}
+
+
 // https://www.w3schools.com/charsets/ref_emoji.asp
 let emojis = ['129409','9757', '9969', '9996','11088','127801','127881'];
 

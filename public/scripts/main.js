@@ -43,7 +43,7 @@ const loadColors = async () => {
                         </p>
                         <div class="color__container">
                             <div class="color__shape" 
-                                style="background-image: linear-gradient(to bottom, #${hexcode1}, #${hexcode2})"
+                                style="background-image: linear-gradient(to bottom, #${hexcode1}, #${hexcode2})" onclick="openOverlay(this)"
                             ></div>
                             <div class="color__side">
                                 <div class="color__hexcodes">
