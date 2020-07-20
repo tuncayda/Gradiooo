@@ -26,7 +26,6 @@ if(process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
 
-
 // Mounting routers to endpoints
 app.use('/', viewRouter);
 app.use('/api/v1/users', userRouter);

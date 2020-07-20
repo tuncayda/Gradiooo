@@ -65,6 +65,20 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+  @media (max-width: 1120px) {
+    .main__content {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start; }
+      .main__content > div {
+        flex: 1 0 33%;
+        margin-left: 1rem;
+        margin-right: 1rem; } }
+  @media (max-width: 720px) {
+    .main__content {
+      flex-direction: column;
+      justify-content: space-around;
+      flex-wrap: wrap; } }
 
 .color {
   width: 110.2rem;
@@ -72,11 +86,30 @@ body {
   margin-top: 8rem;
   background-color: #FFF;
   border-radius: 2rem; }
+  @media (max-width: 1120px) {
+    .color {
+      width: 48%;
+      height: 22rem;
+      margin-top: 8rem; } }
+  @media (max-width: 720px) {
+    .color {
+      width: 90%;
+      height: 28rem;
+      margin-top: 4rem; } }
   .color__title {
     margin-top: 2.2rem;
     margin-left: 3.2rem;
     font-size: 2rem;
     color: #333333; }
+    @media (max-width: 1120px) {
+      .color__title {
+        margin-top: 1rem; } }
+    @media (max-width: 850px) {
+      .color__title {
+        font-size: 1.6rem; } }
+    @media (max-width: 720px) {
+      .color__title {
+        font-size: 2rem; } }
   .color__container {
     display: flex;
     height: 80%; }
@@ -86,6 +119,13 @@ body {
     border-radius: 2rem;
     margin-left: 3.2rem;
     margin-top: 2.2rem; }
+    @media (max-width: 1120px) {
+      .color__shape {
+        height: 15rem;
+        margin-top: .2rem; } }
+    @media (max-width: 720px) {
+      .color__shape {
+        height: 20rem; } }
   .color__side {
     width: 20%;
     margin-top: 2.2rem;
@@ -95,6 +135,18 @@ body {
     justify-content: space-evenly;
     font-size: 2rem;
     color: #333333; }
+    @media (max-width: 1120px) {
+      .color__side {
+        margin-top: .1rem;
+        justify-content: flex-start; }
+        .color__side > div:nth-child(5), .color__side div:nth-child(4) {
+          display: none; } }
+  @media (max-width: 1120px) and (max-width: 850px) {
+    .color__side {
+      font-size: 1.6rem; } }
+  @media (max-width: 1120px) and (max-width: 720px) {
+    .color__side {
+      font-size: 2rem; } }
     .color__side--divider {
       border-top: 1px solid #E0DDDD;
       width: 20%;

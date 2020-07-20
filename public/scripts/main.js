@@ -1,3 +1,12 @@
+/*
+    EXPORT CANVAS TO PNG
+*/
+// var canvas = document.querySelector('canvas');
+// var context = canvas.getContext('2d');
+// context.fillStyle = 'green';
+// context.fillRect(50, 50, 100, 100);
+// window.location = canvas.toDataURL('image/png');
+
 // Count how many pages the users has clicked for the pagination
 let page = 1;
 let limit = 10;
