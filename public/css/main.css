@@ -59,6 +59,9 @@ body {
     margin-left: 4rem; }
     .toolbar__logo--icon {
       width: 2.4rem; }
+      @media (max-width: 580px) {
+        .toolbar__logo--icon {
+          display: none; } }
 
 .main__content {
   display: flex;
@@ -90,7 +93,7 @@ body {
     .color {
       width: 48%;
       height: 22rem;
-      margin-top: 8rem; } }
+      margin-top: 4rem; } }
   @media (max-width: 720px) {
     .color {
       width: 90%;
@@ -146,7 +149,8 @@ body {
       font-size: 1.6rem; } }
   @media (max-width: 1120px) and (max-width: 720px) {
     .color__side {
-      font-size: 2rem; } }
+      font-size: 2rem;
+      justify-content: space-evenly; } }
     .color__side--divider {
       border-top: 1px solid #E0DDDD;
       width: 20%;

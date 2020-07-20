@@ -47,6 +47,10 @@ body {
         margin-left: 4rem;
 
         &--icon {
+            @media (max-width: 580px) {
+                display: none;
+            }
+
             width: 2.4rem;
         }
     }
@@ -87,7 +91,7 @@ body {
     @media (max-width: 1120px) {
         width: 48%;
         height: 22rem;
-        margin-top: 8rem;
+        margin-top: 4rem;
     }
 
     @media (max-width: 720px) {
@@ -162,6 +166,7 @@ body {
 
             @media (max-width: 720px) {
                 font-size: $fs-medium;
+                justify-content: space-evenly;
             }
         }
 
