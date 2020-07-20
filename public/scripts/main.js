@@ -11,14 +11,13 @@
 let page = 1;
 let limit = 10;
 let liked = 0;
-let likedList = [];
+let likedList = new Map();
 
 
 function addToList(color) {
     let list = document.getElementById('colorList');
-    console.log(color);
-    if (!likedList.includes(color.id)) {
-        likedList.push(color.id);
+    if (!likedList.has(color.id)) {
+        likedList.set(color.id, { color });
         liked += 1;
         list.textContent = liked;
     }
