@@ -62,6 +62,21 @@ body {
       @media (max-width: 580px) {
         .toolbar__logo--icon {
           display: none; } }
+  .toolbar__heart {
+    position: relative;
+    background-color: magenta;
+    margin-right: 8rem; }
+    .toolbar__heart > * {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    .toolbar__heart > img {
+      width: 32px;
+      height: 32px; }
+    .toolbar__heart > span {
+      z-index: 50;
+      color: #FFF; }
 
 .main__content {
   display: flex;
@@ -123,10 +138,10 @@ body {
     margin-left: 3.2rem;
     margin-top: 2.2rem;
     cursor: pointer;
-    transition: box-shadow .4s; }
+    transition: all .4s; }
     .color__shape:hover {
       box-shadow: 2px 2px 16px rgba(0, 0, 20, 0.15);
-      transition: box-shadow .4s; }
+      transition: all .4s; }
     @media (max-width: 1120px) {
       .color__shape {
         height: 15rem;

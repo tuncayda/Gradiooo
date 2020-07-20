@@ -1,5 +1,5 @@
 function openOverlay(e) {
-    let overlay = document.getElementById('overlay');
+    const overlay = document.getElementById('overlay');
     overlay.classList.add('overlay');
     overlay.style.backgroundImage = e.style.backgroundImage;
     overlay.style.display = 'block';
