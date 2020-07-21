@@ -13,13 +13,40 @@ let limit = 10;
 let liked = 0;
 let likedList = new Map();
 
+function getListItemDetails(e) {
+    e.classList.toggle('toolbar-heart__list__item--expand');
+}
+
+function truncateString(str, num) {
+    if (str.length <= num) {
+        return str;
+    } else {
+        return str.slice(0, num) + '...'
+    }
+}
+
+function getChildNodes(node) {
+    return {
+        'title': truncateString(node.getElementsByClassName('color__title')[0].innerText, 10),
+        'color': node.getElementsByClassName('color__shape')[0].style.backgroundImage 
+    }
+}
 
 function addToList(color) {
     let list = document.getElementById('colorList');
+    let obj = getChildNodes(color);
     if (!likedList.has(color.id)) {
-        likedList.set(color.id, { color });
+        likedList.set(color.id, obj );
         liked += 1;
         list.textContent = liked;
+        let listSummary = document.getElementById('liked-list');
+        const listItem = `
+        <div class="toolbar-heart__list__item" onclick="getListItemDetails(this)">
+            <span>${obj.title}</span>
+            <div class="toolbar-heart__list__item--color" style="background-image: ${obj.color}"></div>
+        </div>
+        `;
+        listSummary.insertAdjacentHTML('beforeend', listItem);
     }
 }
 
