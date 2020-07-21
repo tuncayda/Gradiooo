@@ -70,7 +70,7 @@ body {
       position: absolute;
       min-width: 40rem;
       max-width: 60rem;
-      min-height: 20rem;
+      min-height: 10rem;
       max-height: 40rem;
       right: 6rem;
       top: 100%;
@@ -87,19 +87,21 @@ body {
         padding: 0 2rem;
         margin-top: 2rem;
         transition: all .3s; }
+        .toolbar-heart__list__item--delete {
+          position: absolute;
+          font-size: 1.6rem;
+          color: #333333;
+          right: 1rem; }
         .toolbar-heart__list__item > span {
           font-size: 2rem; }
-        .toolbar-heart__list__item--expand {
-          height: 8rem; }
         .toolbar-heart__list__item:hover {
           background-color: #EEEEEE;
           transition: all .3s; }
         .toolbar-heart__list__item--color {
           position: absolute;
-          width: 60%;
+          width: 50%;
           height: 2rem;
-          right: 2rem;
-          background-image: linear-gradient(to bottom, #ff5f6d, #ffc371);
+          right: 4rem;
           border-radius: 24px; }
     .toolbar-heart > * {
       position: absolute;

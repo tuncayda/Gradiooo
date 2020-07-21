@@ -13,8 +13,15 @@ let limit = 10;
 let liked = 0;
 let likedList = new Map();
 
-function getListItemDetails(e) {
-    e.classList.toggle('toolbar-heart__list__item--expand');
+// function getListItemDetails(e) {
+    
+// }
+
+function deleteListItem(e) {
+    e.style.display = 'none';
+    liked--;
+    let list = document.getElementById('colorList');
+    list.innerText = liked;
 }
 
 function truncateString(str, num) {
@@ -26,8 +33,10 @@ function truncateString(str, num) {
 }
 
 function getChildNodes(node) {
+    const charLimit = 12;
+
     return {
-        'title': truncateString(node.getElementsByClassName('color__title')[0].innerText, 10),
+        'title': truncateString(node.getElementsByClassName('color__title')[0].innerText, charLimit),
         'color': node.getElementsByClassName('color__shape')[0].style.backgroundImage 
     }
 }
@@ -41,10 +50,11 @@ function addToList(color) {
         list.textContent = liked;
         let listSummary = document.getElementById('liked-list');
         const listItem = `
-        <div class="toolbar-heart__list__item" onclick="getListItemDetails(this)">
-            <span>${obj.title}</span>
-            <div class="toolbar-heart__list__item--color" style="background-image: ${obj.color}"></div>
-        </div>
+            <div class="toolbar-heart__list__item" onclick="deleteListItem(this)">
+                <span>${obj.title}</span>
+                <div class="toolbar-heart__list__item--color" style="background-image: ${obj.color}"></div>
+                <p class="toolbar-heart__list__item--delete">&#10005;</p>
+            </div>
         `;
         listSummary.insertAdjacentHTML('beforeend', listItem);
     }

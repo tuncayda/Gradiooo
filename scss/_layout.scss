@@ -64,7 +64,7 @@ body {
             position: absolute;
             min-width: 40rem;
             max-width: 60rem;
-            min-height: 20rem;
+            min-height: 10rem;
             max-height: 40rem;
             right: 6rem;
             top: 100%;
@@ -83,12 +83,15 @@ body {
                 margin-top: 2rem;
                 transition: all .3s;
 
-                & > span {
-                    font-size: $fs-medium;
+                &--delete {
+                    position: absolute;
+                    font-size: $fs-small;
+                    color: $color-grey-dark;
+                    right: 1rem;
                 }
 
-                &--expand {
-                    height: 8rem;
+                & > span {
+                    font-size: $fs-medium;
                 }
 
                 &:hover {
@@ -98,10 +101,9 @@ body {
 
                 &--color {
                     position: absolute;
-                    width: 60%;
+                    width: 50%;
                     height: 2rem;
-                    right: 2rem;
-                    background-image: linear-gradient(to bottom, rgba(255, 95, 109, 1), rgba(255, 195, 113, 1));
+                    right: 4rem;
                     border-radius: 24px;
                 }
             }
