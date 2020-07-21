@@ -87,6 +87,8 @@ body {
         padding: 0 2rem;
         margin-top: 2rem;
         transition: all .3s; }
+        .toolbar-heart__list__item > span {
+          font-size: 2rem; }
         .toolbar-heart__list__item--expand {
           height: 8rem; }
         .toolbar-heart__list__item:hover {
@@ -99,10 +101,6 @@ body {
           right: 2rem;
           background-image: linear-gradient(to bottom, #ff5f6d, #ffc371);
           border-radius: 24px; }
-        .toolbar-heart__list__item > p {
-          font-size: 20px;
-          font-weight: bold;
-          color: #333333; }
     .toolbar-heart > * {
       position: absolute;
       top: 50%;
