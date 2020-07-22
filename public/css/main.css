@@ -53,6 +53,37 @@ body {
     .toolbar-likes__number {
       z-index: 50;
       color: #FFF; }
+    .toolbar-likes__list {
+      position: absolute;
+      right: 6rem;
+      min-width: 40rem;
+      max-width: 60rem;
+      height: 30rem;
+      top: 100%;
+      z-index: 51;
+      background-color: #FFF;
+      box-shadow: 4px 0 16px rgba(0, 0, 21, 0.1);
+      overflow-y: scroll; }
+      .toolbar-likes__list-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 6rem;
+        transition: all .3s; }
+        .toolbar-likes__list-item:hover {
+          background-color: #EEEEEE;
+          transition: all .3s; }
+        .toolbar-likes__list-item--color {
+          position: absolute;
+          right: 2rem;
+          width: 50%;
+          height: 50%;
+          border-radius: 16px; }
+        .toolbar-likes__list-item--title {
+          position: absolute;
+          left: 2rem;
+          font-size: 2rem; }
   .toolbar__icons {
     display: flex;
     justify-content: center;

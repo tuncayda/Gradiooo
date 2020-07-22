@@ -10,12 +10,11 @@
 // Count how many pages the users has clicked for the pagination
 let page = 1;
 let limit = 10;
-let liked = 0;
-let likedList = new Map();
 
 const likeColor = async (element) => {
     const color = element.parentNode.parentNode.parentNode.parentNode;
     const colorID = color.id;
+    addToList(color);
 
     await axios({
         method: 'post',

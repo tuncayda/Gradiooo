@@ -41,6 +41,47 @@ body {
             z-index: 50;
             color: $color-white;
         }
+
+        &__list {
+            position: absolute; // Relative to the toolbar, not the heart icon
+            right: 6rem;
+            min-width: 40rem;
+            max-width: 60rem;
+            height: 30rem;
+            top: 100%;
+            z-index: 51;
+            background-color: $color-white;
+            box-shadow: 4px 0 16px rgba(0,0,21,.1);
+            overflow-y: scroll;
+
+            &-item {
+                position: relative;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 6rem;
+                transition: all .3s;
+
+                &:hover {
+                    background-color: $color-grey-light-dark;
+                    transition: all .3s;
+                }
+
+                &--color {
+                    position: absolute;
+                    right: 2rem;
+                    width: 50%;
+                    height: 50%;
+                    border-radius: 16px;
+                }
+
+                &--title {
+                    position: absolute;
+                    left: 2rem;
+                    font-size: $fs-medium;
+                }
+            }
+        }
     }
 
     &__icons {
