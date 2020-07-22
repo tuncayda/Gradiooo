@@ -57,11 +57,6 @@
             span Popularity
           .dropdown__item
             span Rating
-  .toolbar-heart
-    span(id='colorList') 
-    img(src='../img/heart-icon.svg' alt='Saved colors' id='heart-icon')
-  .toolbar-heart__list(id='liked-list')
-    //- .toolbar-heart__list__item(onclick='getListItemDetails(this)')
-    //-   span Peach
-    //-   .toolbar-heart__list__item--color
-    //-   //- p &#10005;
+  .toolbar-likes
+    span(class='toolbar-likes__number'  id='colorList') 2 
+    img(class='toolbar-likes__icon' src='../img/heart.svg' alt='Saved colors' id='heart-icon')
