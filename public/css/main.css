@@ -16,10 +16,14 @@ body {
   font-size: 2rem; }
 
 .visible {
-  opacity: 100; }
+  visibility: visible;
+  opacity: 100%;
+  transition: all .3s; }
 
 .hidden {
-  opacity: 0; }
+  visibility: hidden;
+  opacity: 0%;
+  transition: all .3s; }
 
 body {
   background-color: #F8f8f8; }
@@ -42,7 +46,8 @@ body {
   top: 0; }
   .toolbar-likes {
     position: relative;
-    margin-right: 8rem; }
+    margin-right: 8rem;
+    cursor: pointer; }
     .toolbar-likes > * {
       position: absolute;
       top: 50%;
@@ -62,21 +67,22 @@ body {
       top: 100%;
       z-index: 51;
       background-color: #FFF;
-      box-shadow: 4px 0 16px rgba(0, 0, 21, 0.1);
+      box-shadow: 2px 8px 16px rgba(0, 0, 21, 0.05);
       overflow-y: scroll; }
       .toolbar-likes__list-item {
         position: relative;
         display: flex;
         align-items: center;
         width: 100%;
-        height: 6rem;
+        min-height: 6rem;
         transition: all .3s; }
         .toolbar-likes__list-item:hover {
           background-color: #EEEEEE;
-          transition: all .3s; }
+          transition: all .3s;
+          cursor: pointer; }
         .toolbar-likes__list-item--color {
           position: absolute;
-          right: 2rem;
+          right: 6rem;
           width: 50%;
           height: 50%;
           border-radius: 16px; }
@@ -84,6 +90,17 @@ body {
           position: absolute;
           left: 2rem;
           font-size: 2rem; }
+        .toolbar-likes__list-item--hexcodes {
+          display: none;
+          margin-top: 6rem;
+          margin-left: 2rem; }
+        .toolbar-likes__list-item--remove {
+          position: absolute;
+          right: 2rem;
+          padding-left: 1rem;
+          border-left: 2px solid #EEEEEE; }
+          .toolbar-likes__list-item--remove:hover {
+            color: red; }
   .toolbar__icons {
     display: flex;
     justify-content: center;

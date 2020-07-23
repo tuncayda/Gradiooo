@@ -22,9 +22,13 @@ body {
 }
 
 .visible {
-    opacity: 100;
+    visibility: visible;
+    opacity: 100%;
+    transition: all .3s;
 }
 
 .hidden {
-    opacity: 0;
+    visibility: hidden;
+    opacity: 0%;
+    transition: all .3s;
 }

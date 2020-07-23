@@ -14,6 +14,7 @@ let limit = 10;
 const likeColor = async (element) => {
     const color = element.parentNode.parentNode.parentNode.parentNode;
     const colorID = color.id;
+    
     addToList(color);
 
     await axios({
