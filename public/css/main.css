@@ -62,20 +62,23 @@ body {
     .toolbar-likes__list {
       position: absolute;
       right: 6rem;
-      min-width: 80rem;
-      max-width: 60rem;
+      width: 80rem;
       height: 0;
       top: 100%;
       z-index: 51;
       background-color: rgba(255, 255, 255, 0.99);
       box-shadow: 2px 8px 16px rgba(0, 0, 21, 0.05);
       overflow-y: scroll; }
+      @media (max-width: 900px) {
+        .toolbar-likes__list {
+          width: 50rem; } }
       .toolbar-likes__list-item {
         position: relative;
         display: flex;
         align-items: center;
         width: 100%;
         min-height: 6rem;
+        word-wrap: break-word;
         transition: all 0.3s; }
         .toolbar-likes__list-item:hover {
           background-color: #EEEEEE;
@@ -86,12 +89,25 @@ body {
           width: 32rem;
           height: 3.2rem;
           border-radius: 2rem; }
+          @media (max-width: 900px) {
+            .toolbar-likes__list-item--color {
+              width: 24rem; } }
+          @media (max-width: 580px) {
+            .toolbar-likes__list-item--color {
+              width: 32rem;
+              right: 8rem; } }
         .toolbar-likes__list-item--title {
           position: absolute;
           left: 2rem;
           font-size: 2rem; }
+          @media (max-width: 580px) {
+            .toolbar-likes__list-item--title {
+              display: none; } }
         .toolbar-likes__list-item--hexcodes {
           margin-left: 22rem; }
+          @media (max-width: 900px) {
+            .toolbar-likes__list-item--hexcodes {
+              display: none; } }
         .toolbar-likes__list-item--delete {
           position: absolute;
           right: 2rem;

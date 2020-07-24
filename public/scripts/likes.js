@@ -49,7 +49,7 @@ function truncateString(str, num) {
 }
 
 function getChildNodes(node) {
-    const charLimit = 18;
+    const charLimit = 16;
     let hexcodes = node.getElementsByClassName('color__hexcodes')[0];
     let n = hexcodes.children.length;
     let hexArray = [n];
@@ -100,7 +100,7 @@ function addToList(color) {
             <div class='toolbar-likes__list-item' id='${color.id}'>
                 <span class='toolbar-likes__list-item--title'>${obj.title}</span>
                 <div class='toolbar-likes__list-item--hexcodes'>
-                    <span class='toolbar-likes__likes-item--hexcode'>#F3F703 #3B4200</span>
+                    <span class='toolbar-likes__likes-item--hexcode'>#${obj.hexcodes[0]} #${obj.hexcodes[1]}</span>
                 </div>
                 <div class='toolbar-likes__list-item--color' style='background: ${obj.color}'></div>
                 <div class='toolbar-likes__list-item--delete' onclick='deleteItem(this)'>
