@@ -67,6 +67,7 @@ function getChildNodes(node) {
 function deleteItem(node) {
     let color = node.parentNode;
     likesList.delete(color.id);
+    localStorage.removeItem(color.id);
     document.getElementById('likesCount').textContent = likesList.size;
     let colorArr = document.getElementsByClassName('color');
     for (let i = 0; i < colorArr.length; i++) {
@@ -82,6 +83,47 @@ function deleteItem(node) {
     color.style.display = 'none';
 }
 
+for (let i = 0; i < localStorage.length; i++) {
+    let id = localStorage.key(i);
+    addInit(id, JSON.parse(localStorage.getItem(id)));
+}
+
+function addInit(id, obj) {
+    if (!likesList.has(id)) {
+        let toolbarLikes = document.querySelector('.toolbar-likes');
+        if (toolbarLikes.classList.contains('hidden')) {
+            toolbarLikes.classList.remove('hidden');
+            toolbarLikes.classList.add('visible');
+        }
+        let likesCount = document.getElementById('likesCount');
+        if (!likesList.has(id)) {
+            likesList.set(id, obj);
+            likesCount.textContent = likesList.size;
+            let likesDropdown = document.getElementById('likes-list');
+            const listItem = `
+            <div class='toolbar-likes__list-item' id='${id}'>
+                <span class='toolbar-likes__list-item--title'>${obj.title}</span>
+                <div class='toolbar-likes__list-item--hexcodes'>
+                    <span class='toolbar-likes__likes-item--hexcode'>#${obj.hexcodes[0]} #${obj.hexcodes[1]}</span>
+                </div>
+                <div class='toolbar-likes__list-item--color' style='background: ${obj.color}'></div>
+                <div class='toolbar-likes__list-item--delete' onclick='deleteItem(this)'>
+                    <span class='delete-icon'>&#10005;</span>
+                </div>
+            </div>
+            `;
+            likesDropdown.insertAdjacentHTML('beforeend', listItem);
+        }
+    }
+    let colorArr = document.getElementsByClassName('color');
+    for (let i = 0; i < colorArr.length; i++) {
+        if (colorArr[i].id == id) {
+            colorArr[i].getElementsByClassName('like')[0].src = '../img/likes-clicked.svg';
+            break;
+        }
+    }
+}
+
 function addToList(color) {
     if (!likesList.has(color.id)) {
         let toolbarLikes = document.querySelector('.toolbar-likes');
@@ -93,7 +135,7 @@ function addToList(color) {
         let obj = getChildNodes(color);
         if (!likesList.has(color.id)) {
             likesList.set(color.id, obj);
-            localStorage.setItem(color.id, JSON.stringify({obj}));
+            window.localStorage.setItem(color.id, JSON.stringify(obj));
             likesCount.textContent = likesList.size;
             let likesDropdown = document.getElementById('likes-list');
             const listItem = `
@@ -118,6 +160,7 @@ function addToList(color) {
                 list.children[i].style.display = 'none';
                 color.getElementsByClassName('like')[0].src = '../img/likes.svg';
                 likesList.delete(color.id);
+                localStorage.removeItem(color.id);
                 document.getElementById('likesCount').textContent = likesList.size;
             }
         }

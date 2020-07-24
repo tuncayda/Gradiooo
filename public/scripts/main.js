@@ -56,7 +56,7 @@ const loadColors = async () => {
                                     <span class="color__hexcode" onmouseover="colorMouseOver(this);" onmouseout="colorMouseOut(this);" onclick="colorMouseClick(this);">${hexcode2}</span>
                                 </div>
                                 <div class="color__side--divider"></div>
-                                <div class="color__likes scale"><img class="like" src="../img/likes.svg" alt="Likes icon" onclick="likeColor(this)"></div>
+                                <div class="color__likes scale"><img class="like" src="${window.localStorage.getItem(colorID) == null ? '../img/likes.svg' : '../img/likes-clicked.svg'}" alt="Likes icon" onclick="likeColor(this)"></div>
                                 <div class="color__side--divider"></div>
                                 <div class="color__downloads scale"><img src="../img/download.svg" alt="Download icon"></div>
                             </div>
