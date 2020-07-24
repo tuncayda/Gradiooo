@@ -1,8 +1,12 @@
 let likes = 0;
 let likesList = new Map();
 
+let toolbarLikes = document.querySelector('.toolbar-likes');
+let likesDropdown = document.querySelector('.toolbar-likes__list');
+
+
 if (likes === 0) {
-    document.querySelector('.toolbar-likes').classList.add('hidden');
+    toolbarLikes.classList.add('hidden');
 }
 
 function toggleLikesList() {
@@ -12,6 +16,7 @@ function toggleLikesList() {
          likesList.classList.remove('hidden')
          likesList.classList.add('visible')
     } else {
+        likesList.classList.remove('visible');
         likesList.classList.add('hidden');
     }
 }
@@ -45,26 +50,41 @@ function getChildNodes(node) {
 }
 
 function addToList(color) {
-    let toolbarLikes = document.querySelector('.toolbar-likes');
-    if (toolbarLikes.classList.contains('hidden')) {
-        toolbarLikes.classList.remove('hidden');
-        toolbarLikes.classList.add('visible');
-    }
-
-    let likesCount = document.getElementById('likesCount');
-    let obj = getChildNodes(color);
     if (!likesList.has(color.id)) {
-        likesList.set(color.id, obj );
-        likes += 1;
-        likesCount.textContent = likes;
-        let likesDropdown = document.getElementById('likes-list');
-        const listItem = `
-        <div class='toolbar-likes__list-item' onclick='moreInfo(this)' id='${color.id}'>
-            <span class='toolbar-likes__list-item--title'>${obj.title}</span>
-            <div class='toolbar-likes__list-item--color' style='background: ${obj.color}'></div>
-        </div>
-        `;
-        likesDropdown.insertAdjacentHTML('beforeend', listItem);
+        let toolbarLikes = document.querySelector('.toolbar-likes');
+        if (toolbarLikes.classList.contains('hidden')) {
+            toolbarLikes.classList.remove('hidden');
+            toolbarLikes.classList.add('visible');
+        }
+        let likesCount = document.getElementById('likesCount');
+        let obj = getChildNodes(color);
+        if (!likesList.has(color.id)) {
+            likesList.set(color.id, obj);
+            localStorage.setItem(color.id, JSON.stringify({obj}));
+            likesCount.textContent = likesList.size;
+            let likesDropdown = document.getElementById('likes-list');
+            const listItem = `
+            <div class='toolbar-likes__list-item' onclick='moreInfo(this)' id='${color.id}'>
+                <span class='toolbar-likes__list-item--title'>${obj.title}</span>
+                <div class='toolbar-likes__list-item--color' style='background: ${obj.color}'></div>
+            </div>
+            `;
+            likesDropdown.insertAdjacentHTML('beforeend', listItem);
+        }
+        color.getElementsByClassName('like')[0].src = '../img/likes-clicked.svg';
+    } else {
+        let list = document.querySelector('.toolbar-likes__list');
+        for (let i = 0; i < list.children.length; i++) {
+            if (list.children[i].id == color.id) {
+                list.children[i].style.display = 'none';
+                color.getElementsByClassName('like')[0].src = '../img/likes.svg';
+                likesList.delete(color.id);
+                document.getElementById('likesCount').textContent = likesList.size;
+            }
+        }
+        if (likesList.size == 0) { 
+            toolbarLikes.classList.add('hidden');
+            likesDropdown.classList.add('hidden');
+        }
     }
-
 }

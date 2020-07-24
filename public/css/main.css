@@ -18,12 +18,12 @@ body {
 .visible {
   visibility: visible;
   opacity: 100%;
-  transition: all .3s; }
+  transition: all 0.3s; }
 
 .hidden {
   visibility: hidden;
   opacity: 0%;
-  transition: all .3s; }
+  transition: all 0.3s; }
 
 body {
   background-color: #F8f8f8; }
@@ -43,6 +43,7 @@ body {
   color: #333333;
   font-size: 1.6rem;
   position: sticky;
+  z-index: 1000;
   top: 0; }
   .toolbar-likes {
     position: relative;
@@ -66,7 +67,7 @@ body {
       height: 30rem;
       top: 100%;
       z-index: 51;
-      background-color: #FFF;
+      background-color: rgba(255, 255, 255, 0.9);
       box-shadow: 2px 8px 16px rgba(0, 0, 21, 0.05);
       overflow-y: scroll; }
       .toolbar-likes__list-item {
@@ -75,17 +76,17 @@ body {
         align-items: center;
         width: 100%;
         min-height: 6rem;
-        transition: all .3s; }
+        transition: all 0.3s; }
         .toolbar-likes__list-item:hover {
           background-color: #EEEEEE;
-          transition: all .3s;
+          transition: all 0.3s;
           cursor: pointer; }
         .toolbar-likes__list-item--color {
           position: absolute;
           right: 6rem;
           width: 50%;
           height: 50%;
-          border-radius: 16px; }
+          border-radius: 2rem; }
         .toolbar-likes__list-item--title {
           position: absolute;
           left: 2rem;
@@ -184,10 +185,10 @@ body {
     margin-left: 3.2rem;
     margin-top: 2.2rem;
     cursor: pointer;
-    transition: all .4s; }
+    transition: all 0.3s; }
     .color__shape:hover {
       transform: scale(1.01);
-      transition: all .4s; }
+      transition: all 0.3s; }
     @media (max-width: 1120px) {
       .color__shape {
         height: 15rem;
@@ -224,12 +225,6 @@ body {
   .color__hexcodes {
     display: flex;
     flex-direction: column; }
-
-.shape-2 {
-  background-image: linear-gradient(to bottom, #c84e89, #f15f79); }
-
-.shape-3 {
-  background-image: linear-gradient(to right, #fc00ff, #00dbde); }
 
 .dropdown {
   transition: all 0.3s;
@@ -285,7 +280,7 @@ body {
   align-items: center;
   width: 100%;
   min-height: 8rem;
-  margin-top: 80rem;
+  margin-top: 40rem;
   background-color: #333333;
   font-size: 1.6rem;
   color: #F8f8f8; }
@@ -305,6 +300,19 @@ body {
     color: #F8f8f8; }
   .footer a:hover {
     color: #FF5353; }
+
+.load-more__button {
+  width: 50%;
+  height: 6rem;
+  margin-left: 50%;
+  margin-top: 10rem;
+  transform: translateX(-50%);
+  background-color: transparent;
+  border: 1px solid #333333;
+  font-family: "Baloo Paaji 2", sans-serif;
+  font-size: 1.6rem;
+  z-index: 900;
+  cursor: pointer; }
 
 .logo {
   display: flex;
@@ -329,7 +337,8 @@ body {
   opacity: 100%;
   overflow-x: hidden;
   cursor: pointer;
-  transition: all .4s; }
+  z-index: 1001;
+  transition: all 0.3s; }
 
 .pointer {
   cursor: pointer; }
@@ -371,7 +380,7 @@ body {
     opacity: 1; } }
 
 .fade {
-  transition: all .4s; }
+  transition: all 0.3s; }
 
 .fade-in-element {
   transition: all 1s; }

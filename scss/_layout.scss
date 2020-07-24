@@ -20,6 +20,7 @@ body {
     color: $color-grey-dark;
     font-size: 1.6rem;
     position: sticky;
+    z-index: 1000;
     top: 0;
 
     &-likes {
@@ -51,7 +52,8 @@ body {
             height: 30rem;
             top: 100%;
             z-index: 51;
-            background-color: $color-white;
+            background-color: rgba($color-white, .9);
+            // border-radius: 0 0 4px 4px;
             box-shadow: 2px 8px 16px rgba(0,0,21,.05);
             overflow-y: scroll;
 
@@ -61,11 +63,11 @@ body {
                 align-items: center;
                 width: 100%;
                 min-height: 6rem;
-                transition: all .3s;
+                transition: all $transition-speed-normal;
 
                 &:hover {
                     background-color: $color-grey-light-dark;
-                    transition: all .3s;
+                    transition: all $transition-speed-normal;
                     cursor: pointer;
                 }
 
@@ -74,7 +76,7 @@ body {
                     right: 6rem;
                     width: 50%;
                     height: 50%;
-                    border-radius: 16px;
+                    border-radius: 2rem;
                 }
                     
                 &--title {
@@ -214,12 +216,12 @@ body {
         margin-left: 3.2rem;
         margin-top: 2.2rem;
         cursor: pointer;
-        transition: all .4s;
+        transition: all $transition-speed-normal;
 
         &:hover {
             // box-shadow: 2px 2px 16px rgba(0,0,20,.15);
             transform: scale(1.01);
-            transition: all .4s;
+            transition: all $transition-speed-normal;
         }
 
         @media (max-width: 1120px) {
@@ -271,14 +273,6 @@ body {
         display: flex;
         flex-direction: column;
     }
-}
-
-// for testing purposes only, remove before prod
-.shape-2 {
-    background-image: linear-gradient(to bottom, rgba(200, 78, 137, 1), rgba(241, 95, 121, 1));
-}
-.shape-3 {
-    background-image: linear-gradient(to right, rgba(252, 0, 255, 1), rgba(0, 219, 222, 1));
 }
 
 .dropdown {
@@ -356,7 +350,7 @@ body {
     align-items: center;
     width: 100%;
     min-height: 8rem;
-    margin-top: 80rem;
+    margin-top: 40rem;
     background-color: $color-grey-dark;
     font-size: $fs-small;
     color: $color-grey-light;

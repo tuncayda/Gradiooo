@@ -1,5 +1,19 @@
 @import "variables";
 
+.load-more__button {
+    width: 50%;
+    height: 6rem;
+    margin-left: 50%;
+    margin-top: 10rem;
+    transform: translateX(-50%);
+    background-color: transparent;
+    border: 1px solid $color-grey-dark;
+    font-family: $font-face;
+    font-size: $fs-small;
+    z-index: 900;
+    cursor: pointer;
+}
+
 .logo {
     display: flex;
     flex-direction: column;
@@ -28,7 +42,8 @@
     opacity: 100%;
     overflow-x: hidden;
     cursor: pointer;
-    transition: all .4s;
+    z-index: 1001;
+    transition: all $transition-speed-normal;
 }
 
 .pointer {
