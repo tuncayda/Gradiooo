@@ -4,18 +4,19 @@ let likesList = new Map();
 let toolbarLikes = document.querySelector('.toolbar-likes');
 let likesDropdown = document.querySelector('.toolbar-likes__list');
 
-let toolbarLikesChildrenList = [toolbarLikes.children.length];
-for (let i = 0; i < toolbarLikes.children.length; i++) {
-    toolbarLikesChildrenList.push(toolbarLikes.children[i]);
-    console.log(toolbarLikes.children[i])
-}
-
 document.addEventListener('click', event => {
-    let targetId = event.target.id;
+    let target = event.target;
     if (
-        targetId !== likesDropdown.id && 
-        targetId !== 'heart-icon' && 
-        targetId !== 'likesCount') {
+        target.id !== likesDropdown.id && 
+        target.id !== 'heart-icon' && 
+        target.id !== 'likesCount' &&
+        target.className !== 'toolbar-likes__list-item' &&
+        target.className !== 'toolbar-likes__list-item--color' &&
+        target.className !== 'toolbar-likes__list-item--title' &&
+        target.className !== 'toolbar-likes__list-item--hexcodes' &&
+        target.className !== 'toolbar-likes__list-item--delete' &&
+        target.className !== 'toolbar-likes__likes-item--hexcode' &&
+        target.className !== 'delete-icon') {
             likesDropdown.classList.remove('visible');
             likesDropdown.classList.add('hidden');
     }
@@ -30,15 +31,13 @@ function toggleLikesList() {
 
     if(likesList.classList.contains('hidden')) {
          likesList.classList.remove('hidden');
+         likesList.style = 'height: 30rem';
          likesList.classList.add('visible');
     } else {
         likesList.classList.remove('visible');
+        likesList.style = 'height: 0';
         likesList.classList.add('hidden');
     }
-}
-
-function moreInfo(e) {
-    e.getElementsByClassName('toolbar-likes__list-item--hexcodes')[0].classList.add('visible');
 }
 
 function truncateString(str, num) {
@@ -50,7 +49,7 @@ function truncateString(str, num) {
 }
 
 function getChildNodes(node) {
-    const charLimit = 12;
+    const charLimit = 18;
     let hexcodes = node.getElementsByClassName('color__hexcodes')[0];
     let n = hexcodes.children.length;
     let hexArray = [n];
@@ -63,6 +62,24 @@ function getChildNodes(node) {
         'color': node.getElementsByClassName('color__shape')[0].style.backgroundImage,
         'hexcodes': hexArray
     }
+}
+
+function deleteItem(node) {
+    let color = node.parentNode;
+    likesList.delete(color.id);
+    document.getElementById('likesCount').textContent = likesList.size;
+    let colorArr = document.getElementsByClassName('color');
+    for (let i = 0; i < colorArr.length; i++) {
+        if (colorArr[i].id == color.id) {
+            colorArr[i].getElementsByClassName('like')[0].src = '../img/likes.svg';
+            break;
+        }
+    }
+    if (likesList.size == 0) { 
+        toolbarLikes.classList.add('hidden');
+        likesDropdown.classList.add('hidden');
+    }
+    color.style.display = 'none';
 }
 
 function addToList(color) {
@@ -80,9 +97,15 @@ function addToList(color) {
             likesCount.textContent = likesList.size;
             let likesDropdown = document.getElementById('likes-list');
             const listItem = `
-            <div class='toolbar-likes__list-item' onclick='moreInfo(this)' id='${color.id}'>
+            <div class='toolbar-likes__list-item' id='${color.id}'>
                 <span class='toolbar-likes__list-item--title'>${obj.title}</span>
+                <div class='toolbar-likes__list-item--hexcodes'>
+                    <span class='toolbar-likes__likes-item--hexcode'>#F3F703 #3B4200</span>
+                </div>
                 <div class='toolbar-likes__list-item--color' style='background: ${obj.color}'></div>
+                <div class='toolbar-likes__list-item--delete' onclick='deleteItem(this)'>
+                    <span class='delete-icon'>&#10005;</span>
+                </div>
             </div>
             `;
             likesDropdown.insertAdjacentHTML('beforeend', listItem);

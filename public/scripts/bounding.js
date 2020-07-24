@@ -9,6 +9,7 @@ window.onscroll = function() {
     var currentPos = window.pageYOffset;
     if (prevPos > currentPos) {
         element.style.top = '0';
+        element.style.opacity = '95%';
     } else {
         element.style.top = '-100px';
     }

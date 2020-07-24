@@ -62,12 +62,12 @@ body {
     .toolbar-likes__list {
       position: absolute;
       right: 6rem;
-      min-width: 40rem;
+      min-width: 80rem;
       max-width: 60rem;
-      height: 30rem;
+      height: 0;
       top: 100%;
       z-index: 51;
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(255, 255, 255, 0.99);
       box-shadow: 2px 8px 16px rgba(0, 0, 21, 0.05);
       overflow-y: scroll; }
       .toolbar-likes__list-item {
@@ -79,29 +79,27 @@ body {
         transition: all 0.3s; }
         .toolbar-likes__list-item:hover {
           background-color: #EEEEEE;
-          transition: all 0.3s;
-          cursor: pointer; }
+          transition: all 0.3s; }
         .toolbar-likes__list-item--color {
           position: absolute;
           right: 6rem;
-          width: 50%;
-          height: 50%;
+          width: 32rem;
+          height: 3.2rem;
           border-radius: 2rem; }
         .toolbar-likes__list-item--title {
           position: absolute;
           left: 2rem;
           font-size: 2rem; }
         .toolbar-likes__list-item--hexcodes {
-          display: none;
-          margin-top: 6rem;
-          margin-left: 2rem; }
-        .toolbar-likes__list-item--remove {
+          margin-left: 22rem; }
+        .toolbar-likes__list-item--delete {
           position: absolute;
           right: 2rem;
-          padding-left: 1rem;
-          border-left: 2px solid #EEEEEE; }
-          .toolbar-likes__list-item--remove:hover {
-            color: red; }
+          font-size: 14px;
+          color: #333333;
+          cursor: pointer; }
+          .toolbar-likes__list-item--delete:hover {
+            color: #FF5353; }
   .toolbar__icons {
     display: flex;
     justify-content: center;
@@ -311,6 +309,7 @@ body {
   border: 1px solid #333333;
   font-family: "Baloo Paaji 2", sans-serif;
   font-size: 1.6rem;
+  color: #333333;
   z-index: 900;
   cursor: pointer; }
 
