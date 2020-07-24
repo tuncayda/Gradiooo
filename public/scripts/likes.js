@@ -4,6 +4,22 @@ let likesList = new Map();
 let toolbarLikes = document.querySelector('.toolbar-likes');
 let likesDropdown = document.querySelector('.toolbar-likes__list');
 
+let toolbarLikesChildrenList = [toolbarLikes.children.length];
+for (let i = 0; i < toolbarLikes.children.length; i++) {
+    toolbarLikesChildrenList.push(toolbarLikes.children[i]);
+    console.log(toolbarLikes.children[i])
+}
+
+document.addEventListener('click', event => {
+    let targetId = event.target.id;
+    if (
+        targetId !== likesDropdown.id && 
+        targetId !== 'heart-icon' && 
+        targetId !== 'likesCount') {
+            likesDropdown.classList.remove('visible');
+            likesDropdown.classList.add('hidden');
+    }
+})
 
 if (likes === 0) {
     toolbarLikes.classList.add('hidden');
@@ -13,8 +29,8 @@ function toggleLikesList() {
     let likesList = document.querySelector('.toolbar-likes__list');
 
     if(likesList.classList.contains('hidden')) {
-         likesList.classList.remove('hidden')
-         likesList.classList.add('visible')
+         likesList.classList.remove('hidden');
+         likesList.classList.add('visible');
     } else {
         likesList.classList.remove('visible');
         likesList.classList.add('hidden');
