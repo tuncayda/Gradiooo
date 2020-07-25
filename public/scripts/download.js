@@ -1,6 +1,5 @@
 /**
- * About this file:
- * It converts a canvas DOM element to an image.
+ * This file converts canvas element to a image that can be downloaded
  */
 
 
