@@ -113,9 +113,11 @@ body {
           right: 2rem;
           font-size: 14px;
           color: #333333;
+          transition: all 0.3s;
           cursor: pointer; }
           .toolbar-likes__list-item--delete:hover {
-            color: #FF5353; }
+            color: #FF5353;
+            transition: all 0.3s; }
   .toolbar__icons {
     display: flex;
     justify-content: center;

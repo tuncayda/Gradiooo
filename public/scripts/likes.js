@@ -107,7 +107,7 @@ function addInit(id, obj) {
                     <span class='toolbar-likes__likes-item--hexcode'>#${obj.hexcodes[0]} #${obj.hexcodes[1]}</span>
                 </div>
                 <div class='toolbar-likes__list-item--color' style='background: ${obj.color}'></div>
-                <div class='toolbar-likes__list-item--delete' onclick='deleteItem(this)'>
+                <div class='toolbar-likes__list-item--delete' onclick='deleteItem(this)' title='Remove color'>
                     <span class='delete-icon'>&#10005;</span>
                 </div>
             </div>

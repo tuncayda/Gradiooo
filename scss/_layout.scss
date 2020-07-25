@@ -118,10 +118,12 @@ body {
                     right: 2rem;
                     font-size: 14px;
                     color: $color-grey-dark;
+                    transition: all $transition-speed-normal;
                     cursor: pointer;
-
+                    
                     &:hover {
                         color: $color-primary;
+                        transition: all $transition-speed-normal;
                     }
                 }
             }

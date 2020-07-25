@@ -1,12 +1,3 @@
-/*
-    EXPORT CANVAS TO PNG
-*/
-// var canvas = document.querySelector('canvas');
-// var context = canvas.getContext('2d');
-// context.fillStyle = 'green';
-// context.fillRect(50, 50, 100, 100);
-// window.location = canvas.toDataURL('image/png');
-
 // Count how many pages the users has clicked for the pagination
 let page = 1;
 let limit = 10;
@@ -58,7 +49,7 @@ const loadColors = async () => {
                                 <div class="color__side--divider"></div>
                                 <div class="color__likes scale"><img class="like" src="${window.localStorage.getItem(colorID) == null ? '../img/likes.svg' : '../img/likes-clicked.svg'}" alt="Likes icon" onclick="likeColor(this)"></div>
                                 <div class="color__side--divider"></div>
-                                <div class="color__downloads scale"><img src="../img/download.svg" alt="Download icon"></div>
+                                <a class="color__downloads scale" onclick='canvasToImg(this, "png");'><img src="../img/download.svg" alt="Download icon"></a>
                             </div>
                         </div>
                     </div>
