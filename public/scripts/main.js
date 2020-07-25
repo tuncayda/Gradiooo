@@ -49,7 +49,7 @@ const loadColors = async () => {
                                 <div class="color__side--divider"></div>
                                 <div class="color__likes scale"><img class="like" src="${window.localStorage.getItem(colorID) == null ? '../img/likes.svg' : '../img/likes-clicked.svg'}" alt="Likes icon" onclick="likeColor(this)"></div>
                                 <div class="color__side--divider"></div>
-                                <a class="color__downloads scale" onclick='canvasToImg(this, "png");'><img src="../img/download.svg" alt="Download icon"></a>
+                                <a title='Download image' class="color__downloads scale" onclick='canvasToImg(this, "png");'><img src="../img/download.svg" alt="Download icon"></a>
                             </div>
                         </div>
                     </div>
