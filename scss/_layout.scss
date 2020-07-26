@@ -11,7 +11,7 @@ body {
     justify-content: center;
     height: 100vh;
 
-    @media (max-width: 500px) {
+    @media (max-width: 550px) {
         display: none;
     }
 }
@@ -392,6 +392,7 @@ body {
     &__items {
         display: flex;
         flex-direction: column;
+
     }
 
     &__item {
@@ -409,6 +410,17 @@ body {
     &__colors {
         display: flex;
         padding: 0 2rem;
+
+        @media (max-width: 720px) {
+            flex-direction: column;
+            width: 11rem;
+            padding: 0 3.2rem;
+            
+            & > *:not(:first-child) {
+                margin-top: 2rem;
+            }
+            margin-bottom: 2rem;
+        }
     }
 
     &__color {
@@ -460,7 +472,7 @@ body {
     padding: 0 2rem;
     width: 100%;
     min-height: 8rem;
-    margin-top: 40rem;
+    margin-top: 28rem;
     background-color: $color-grey-dark;
     font-size: $fs-small;
     color: $color-grey-light;
