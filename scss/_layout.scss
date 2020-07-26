@@ -10,6 +10,10 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+
+    @media (max-width: 500px) {
+        display: none;
+    }
 }
 
 .toolbar {
@@ -23,10 +27,18 @@ body {
     z-index: 1000;
     top: 0;
 
+    @media (max-width: 500px) {
+        height: 4.8rem;
+    }
+
     &-likes {
         position: relative;
         margin-right: 8rem;
         cursor: pointer;
+
+        @media (max-width: 500px) {
+            display: none;
+        }
 
         & > * {
             position: absolute;
@@ -60,8 +72,29 @@ body {
                 width: 50rem;
             }
 
+            @media (max-width: 500px) {
+                right: 0;
+                width: 100%;
+                max-height: 20rem !important;
+            }
+
             // @media (max-width: 1120px) {
             //     background-color: $color-white;
+            // }
+
+            // &--clear {
+            //     color: $color-grey-dark;
+            //     margin-top: 1rem;
+            //     margin-bottom: 1rem;
+            //     margin-left: 2rem;
+
+            //     & > span {
+            //         cursor: pointer;
+
+            //         &:hover {
+            //             color: $color-primary;
+            //         }
+            //     }
             // }
 
             &-item {
@@ -90,8 +123,15 @@ body {
                     }
 
                     @media (max-width: 580px) {
-                        width: 32rem;
-                        right: 8rem;
+                        right: 0;
+                        transform: translateX(-50%);
+                        width: 50%;
+                    }
+
+                    @media (max-width: 500px) {
+                        right: 0;
+                        transform: translateX(-50%);
+                        width: 50%;
                     }
                 }
                     
@@ -137,6 +177,10 @@ body {
         list-style: none;
         height: 6.4rem;
         width: 100vw;
+
+        @media (max-width:500px) {
+            display: none;
+        }
     }
 
     &__icons li {
@@ -154,12 +198,21 @@ body {
     &__logo {
         margin-left: 4rem;
 
+        @media (max-width: 500px) {
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+
         &--icon {
+            width: 2.4rem;
+            
             @media (max-width: 580px) {
                 display: none;
             }
 
-            width: 2.4rem;
+            @media (max-width: 500px) {
+                display: block;
+            }
         }
     }
 }
@@ -207,6 +260,16 @@ body {
         height: 28rem;
         margin-top: 4rem;
     }
+
+    @media (max-width: 500px) {
+        position: relative;
+    }
+
+    &__downloads {
+        @media (max-width: 1120px) {
+            display: none;
+        }
+    }
     
     &__title {
         margin-top: 2.2rem;
@@ -224,6 +287,10 @@ body {
 
         @media (max-width: 720px) {
             font-size: $fs-medium;
+        }
+
+        @media (max-width: 500px) {
+            margin-left: 2rem;
         }
     }
     
@@ -256,6 +323,12 @@ body {
         @media (max-width:720px) {
             height: 20rem;
         }
+
+        @media (max-width: 500px) {
+            width: 90%;
+            margin-left: 2rem;
+            height: 22rem;
+        }
     }
     
     &__side {
@@ -284,18 +357,30 @@ body {
                 font-size: $fs-medium;
                 justify-content: space-evenly;
             }
+
+            @media (max-width: 500px) {
+                display: none;
+            }
         }
 
         &--divider {
             border-top: 1px solid $color-grey-lighter;
             width: 20%;
             margin: 2rem auto;
+
+            @media (max-width: 500px) {
+                display: none;
+            }
         }
     }
     
     &__hexcodes {
         display: flex;
         flex-direction: column;
+
+        @media (max-width: 500px) {
+            display: none;
+        }
     }
 }
 
@@ -372,6 +457,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 2rem;
     width: 100%;
     min-height: 8rem;
     margin-top: 40rem;
@@ -379,23 +465,24 @@ body {
     font-size: $fs-small;
     color: $color-grey-light;
 
-    &__copyright {
-        margin-right: 2rem;
+    &__heart {
+        @media (max-width: 500px) {
+            width: 16px;
+        }
     }
 
-    &__social {
-        margin-left: 2rem;
-
-        & > *:not(:first-child) {
-            margin-left: 2rem;
-        }
+    @media (max-width: 500px) {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 1rem;
     }
 
     &__text {
         display: flex;
         flex-direction: row;
-        
-        & > * {
+        justify-items: center;
+
+        & > *:not(:first-child) {
             margin-left: 1rem;
         }
     }

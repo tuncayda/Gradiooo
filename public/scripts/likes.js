@@ -16,7 +16,8 @@ document.addEventListener('click', event => {
         target.className !== 'toolbar-likes__list-item--hexcodes' &&
         target.className !== 'toolbar-likes__list-item--delete' &&
         target.className !== 'toolbar-likes__likes-item--hexcode' &&
-        target.className !== 'delete-icon') {
+        target.className !== 'delete-icon' &&
+        target.className !== 'like') {
             likesDropdown.classList.remove('visible');
             likesDropdown.classList.add('hidden');
     }

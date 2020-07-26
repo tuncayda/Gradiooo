@@ -7,13 +7,13 @@ block colors
         p.color__title
           | #{color.title}
         .color__container
-          .color__shape(onclick='openOverlay(this)' style='background-image: linear-gradient(to bottom, #' + `${color.colors[0]}` + ',#' + `${color.colors[1]}` + ')')
+          .color__shape(title="Fullscreen" onclick='openOverlay(this)' style='background-image: linear-gradient(to bottom, #' + `${color.colors[0]}` + ',#' + `${color.colors[1]}` + ')')
           .color__side
-            .color__hexcodes
+            .color__hexcodes(title="Copy")
               span.color__hexcode(onmouseover='colorMouseOver(this);' onmouseout='colorMouseOut(this);' onclick='colorMouseClick(this);') #{color.colors[0]}
               span.color__hexcode(onmouseover='colorMouseOver(this);' onmouseout='colorMouseOut(this);' onclick='colorMouseClick(this);') #{color.colors[1]}
             .color__side--divider
-            .color__likes.scale
+            .color__likes.scale(title="Like")
               img(src='../img/likes.svg' alt='Likes icon' class='like' onclick="likeColor(this)")
             .color__side--divider
             a.color__downloads.scale(title='Download as image' onclick='canvasToImg(this, "png");')
