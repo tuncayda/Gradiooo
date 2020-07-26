@@ -3,10 +3,12 @@ function openOverlay(e) {
     const overlay = document.getElementById('overlay');
     overlay.classList.add('overlay');
     overlay.style.backgroundImage = e.style.backgroundImage;
+    document.querySelector("body").style.overflow = 'hidden';
     overlay.style.display = 'block';
 }
 
 function closeOverlay() {
+    document.querySelector("body").style.overflow = 'visible';
     document.getElementById('overlay').style.display = 'none';
 }
 
