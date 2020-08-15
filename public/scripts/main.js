@@ -38,18 +38,18 @@ const loadColors = async () => {
                         ${title}
                         </p>
                         <div class="color__container">
-                            <div title="Fullscreen" class="color__shape" 
+                            <div class="color__shape" 
                                 style="background-image: linear-gradient(to bottom, #${hexcode1}, #${hexcode2})" onclick="openOverlay(this)"
                             ></div>
                             <div class="color__side">
-                                <div class="color__hexcodes" title="Copy">
-                                    <span class="color__hexcode" onmouseover="colorMouseOver(this);" onmouseout="colorMouseOut(this);" onclick="colorMouseClick(this);">${hexcode1}</span>
-                                    <span class="color__hexcode" onmouseover="colorMouseOver(this);" onmouseout="colorMouseOut(this);" onclick="colorMouseClick(this);">${hexcode2}</span>
+                                <div class="color__hexcodes">
+                                    <span class="color__hexcode" onmouseover="colorMouseOver(this);" onmouseout="colorMouseOut(this);" onclick="copyHex(this);">${hexcode1}</span>
+                                    <span class="color__hexcode" onmouseover="colorMouseOver(this);" onmouseout="colorMouseOut(this);" onclick="copyHex(this);">${hexcode2}</span>
                                 </div>
                                 <div class="color__side--divider"></div>
-                                <div class="color__likes scale" title="Like"><img class="like" src="${window.localStorage.getItem(colorID) == null ? '../img/likes.svg' : '../img/likes-clicked.svg'}" alt="Likes icon" onclick="likeColor(this)"></div>
+                                <div class="color__likes scale"><img class="like" src="${window.localStorage.getItem(colorID) == null ? '../img/likes.svg' : '../img/likes-clicked.svg'}" alt="Likes icon" onclick="likeColor(this)"></div>
                                 <div class="color__side--divider"></div>
-                                <a title='Download as image' class="color__downloads scale" onclick='canvasToImg(this, "png");'><img src="../img/download.svg" alt="Download icon"></a>
+                                <a class="color__downloads scale" onclick='canvasToImg(this, "png");'><img src="../img/download.svg" alt="Download icon"></a>
                             </div>
                         </div>
                     </div>

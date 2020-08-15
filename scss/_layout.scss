@@ -269,6 +269,10 @@ body {
         position: relative;
     }
 
+    &__hexcode {
+        cursor: pointer;
+    }
+
     &__downloads {
         @media (max-width: 1120px) {
             display: none;

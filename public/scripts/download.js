@@ -1,13 +1,8 @@
 /**
- * This file converts canvas element to a image that can be downloaded
- */
-
-
-/**
  * Convert canvas to an image with specified type (e.g. png and jpeg)
- * Return an image
  */
 function canvasToImg(color, imageType) {
+
     // Extract the hex values from the div
     let hexcodes = getHexcodes(color);
 
@@ -27,7 +22,7 @@ function canvasToImg(color, imageType) {
     // Convert canvas to image
     let image = canvas.toDataURL(`image/${imageType};`);
 
-    // Set the color title and download link to the image
+    // Set title attribute
     let colorTitle = color.closest('.color').getElementsByClassName('color__title')[0].innerText;
     color.setAttribute('download', colorTitle);
     color.setAttribute('href', image);

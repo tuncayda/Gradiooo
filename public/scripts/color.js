@@ -1,8 +1,13 @@
 
+/**
+ * When user clicks on a color, it will expand to fullscreen
+ */
 function openOverlay(e) {
     const overlay = document.getElementById('overlay');
     overlay.classList.add('overlay');
     overlay.style.backgroundImage = e.style.backgroundImage;
+
+    // Prevent background (body) from scrolling when modal is open
     document.querySelector("body").style.overflow = 'hidden';
     overlay.style.display = 'block';
 }
@@ -12,34 +17,33 @@ function closeOverlay() {
     document.getElementById('overlay').style.display = 'none';
 }
 
-// https://www.w3schools.com/charsets/ref_emoji.asp
-let emojis = ['129409','9757', '9969', '9996','11088','127801','127881'];
-
-function randomSelect() {
-    return emojis[Math.floor(Math.random() * emojis.length)];
-}
-
-// Style hexcode on hover
+/**
+ * Style the hexcode on hover using the corresponding hexvalue
+ */
 function colorMouseOver(e) {
     e.style.borderBottom = "2px solid #" + e.innerText;
-    e.classList.add('pointer');
 }
 
 function colorMouseOut(e) {
     e.style.borderBottom = "none";
 }
 
-// Show confirmation after user clicks on hexcode
-function colorMouseClick(e) {
+/**
+ * Copy hexcode tu users clipboard
+ * Show confirmation after user clicks on hexcode
+ */
+function copyHex(e) {
     let hexcode = e.innerText;
     copyToClipboard(hexcode);
     e.innerText = 'Copied';
-    // e.innerHTML = '<p>Copied &#128077;</p>';
     setTimeout(() => {
         e.innerText = hexcode;
     }, 1500);
 }
 
+/**
+ * Helper function to copy the hexcode into users clipboard
+ */
 function copyToClipboard(str) {
     var textArea = document.createElement("textarea");
     textArea.value = str;

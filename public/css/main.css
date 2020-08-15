@@ -212,6 +212,8 @@ body {
   @media (max-width: 500px) {
     .color {
       position: relative; } }
+  .color__hexcode {
+    cursor: pointer; }
   @media (max-width: 1120px) {
     .color__downloads {
       display: none; } }
