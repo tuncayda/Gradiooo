@@ -50,14 +50,14 @@ function truncateString(str, num) {
 }
 
 function getChildNodes(node) {
-    const charLimit = 16;
     let hexcodes = node.getElementsByClassName('color__hexcodes')[0];
     let n = hexcodes.children.length;
     let hexArray = [n];
     for (let i = 0; i < n; i++) {
         hexArray[i] = hexcodes.children[i].innerText;
     }
-
+    
+    const charLimit = 16;
     return {
         'title': truncateString(node.getElementsByClassName('color__title')[0].innerText, charLimit),
         'color': node.getElementsByClassName('color__shape')[0].style.backgroundImage,

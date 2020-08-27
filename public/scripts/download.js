@@ -1,7 +1,7 @@
 /**
  * Convert canvas to an image with specified type (e.g. png and jpeg)
  */
-function canvasToImg(color, imageType) {
+function canvasToImg(color, imageType = 'png') {
 
     // Extract the hex values from the div
     let hexcodes = getHexcodes(color);
