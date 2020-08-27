@@ -28,6 +28,10 @@ function colorMouseOut(e) {
     e.style.borderBottom = "none";
 }
 
+
+function onclickMessage(node) {
+    console.log(node);
+}
 /**
  * Copy hexcode tu users clipboard
  * Show confirmation after user clicks on hexcode
@@ -38,7 +42,7 @@ function copyHex(e) {
     e.innerText = 'Copied';
     setTimeout(() => {
         e.innerText = hexcode;
-    }, 1500);
+    }, 500);
 }
 
 /**
