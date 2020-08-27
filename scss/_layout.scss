@@ -227,6 +227,18 @@ body {
     justify-content: center;
     align-items: center;
 
+    &.column {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+        & > * {
+            flex: 0 40%;
+            margin-left: 2rem;
+        }
+    }
+
     @media (max-width: 1120px) {
         flex-direction: row;
         flex-wrap: wrap;
