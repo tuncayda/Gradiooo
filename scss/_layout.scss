@@ -226,16 +226,17 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    
     &.column {
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding-left: 2rem;
-        padding-right: 2rem;
-
-        & > * {
-            flex: 0 40%;
-            margin-left: 2rem;
+        @media (min-width: 1000px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            
+            & > * {
+                flex: 0 40%;
+                margin-left: 4rem;
+                margin-top: 4rem;
+            }
         }
     }
 

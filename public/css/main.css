@@ -178,14 +178,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
-  .main__content.column {
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-left: 2rem;
-    padding-right: 2rem; }
-    .main__content.column > * {
-      flex: 0 40%;
-      margin-left: 2rem; }
+  @media (min-width: 1000px) {
+    .main__content.column {
+      flex-direction: row;
+      flex-wrap: wrap; }
+      .main__content.column > * {
+        flex: 0 40%;
+        margin-left: 4rem;
+        margin-top: 4rem; } }
   @media (max-width: 1120px) {
     .main__content {
       flex-direction: row;
