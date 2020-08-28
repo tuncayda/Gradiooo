@@ -64,7 +64,7 @@ body {
       left: 50%;
       transform: translate(-50%, -50%); }
     .toolbar-likes__icon {
-      width: 32px; }
+      width: 36px; }
     .toolbar-likes__number {
       z-index: 50;
       color: #FFF; }
@@ -184,7 +184,8 @@ body {
       flex-wrap: wrap; }
       .main__content.column > * {
         flex: 0 40%;
-        margin-left: 4rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
         margin-top: 4rem; } }
   @media (max-width: 1120px) {
     .main__content {
@@ -411,7 +412,8 @@ body {
 .logo {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  animation: fade-top-bottom 2s; }
   .logo-image {
     width: 7.5rem; }
   .logo-caption {
@@ -472,6 +474,14 @@ body {
     opacity: 0; }
   to {
     opacity: 1; } }
+
+@keyframes fade-top-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(-100px); }
+  to {
+    opacity: 1;
+    transform: translateY(0); } }
 
 .fade {
   transition: all 0.3s; }

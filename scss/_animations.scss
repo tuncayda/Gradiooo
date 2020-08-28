@@ -10,6 +10,16 @@
     }
 }
 
+@keyframes fade-top-bottom {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    } to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .fade {
     transition: all $transition-speed-normal;
 }

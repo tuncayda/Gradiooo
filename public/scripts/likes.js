@@ -137,7 +137,11 @@ function addToList(color) {
         if (!likesList.has(color.id)) {
             likesList.set(color.id, obj);
             window.localStorage.setItem(color.id, JSON.stringify(obj));
-            likesCount.textContent = likesList.size;
+            if (likesList.size > 99) {
+                likesCount.textContent = '99+';
+            } else {
+                likesCount.textContent = likesList.size;
+            }
             let likesDropdown = document.getElementById('likes-list');
             const listItem = `
             <div class='toolbar-likes__list-item' id='${color.id}'>
