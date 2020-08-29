@@ -20,6 +20,12 @@
     }
 }
 
+@keyframes fade-top-bottom-bounce {
+    0%      { opacity: 0;   transform: translateY(-80px); }
+    50%     { opacity: .6;  transform: translateY(10px); }
+    100%    { opacity: 1;   transform: translateY(0); }
+}
+
 .fade {
     transition: all $transition-speed-normal;
 }
