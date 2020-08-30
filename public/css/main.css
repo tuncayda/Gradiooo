@@ -12,7 +12,7 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-family: "Baloo Paaji 2", sans-serif, sans-serif;
+  font-family: "Baloo Paaji 2", sans-serif;
   font-size: 2rem; }
 
 .visible {
@@ -468,16 +468,16 @@ body {
   background-color: #333333; }
 
 @keyframes fade-in {
-  from {
+  0% {
     opacity: 0; }
-  to {
+  100% {
     opacity: 1; } }
 
 @keyframes fade-top-bottom {
-  from {
+  0% {
     opacity: 0;
     transform: translateY(-100px); }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0); } }
 
@@ -500,8 +500,7 @@ body {
 
 .scale {
   transition: all 0.3s; }
-
-.scale:hover {
-  cursor: pointer;
-  transition: all 0.3s;
-  transform: scale(1.3, 1.3); }
+  .scale:hover {
+    cursor: pointer;
+    transition: all 0.3s;
+    transform: scale(1.3, 1.3); }

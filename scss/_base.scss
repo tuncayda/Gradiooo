@@ -13,11 +13,11 @@
   
 html {
     box-sizing: border-box;
-    font-size: 62.5%; 
+    font-size: 62.5%; // 1rem = 10px
 }
 
 body {
-    font-family: $font-face, sans-serif;
+    font-family: $font-face;
     font-size: $fs-medium;
 }
 

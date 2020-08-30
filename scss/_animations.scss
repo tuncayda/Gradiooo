@@ -1,23 +1,13 @@
 @import "variables";
 
 @keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    0%    { opacity: 0; }
+    100%  { opacity: 1; }
 }
 
 @keyframes fade-top-bottom {
-    from {
-        opacity: 0;
-        transform: translateY(-100px);
-    } to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    0%      { opacity: 0; transform: translateY(-100px); } 
+    100%    { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fade-top-bottom-bounce {
@@ -26,20 +16,15 @@
     100%    { opacity: 1;   transform: translateY(0); }
 }
 
-.fade {
-    transition: all $transition-speed-normal;
-}
-
-.fade-in-element {
-    transition: all $transition-speed-slow;
-}
+.fade               { transition: all $transition-speed-normal; }
+.fade-in-element    { transition: all $transition-speed-slow; }
 
 .scale {
     transition: all $transition-speed-normal;
-}
 
-.scale:hover {
-    cursor: pointer;
-    transition: all $transition-speed-normal;
-    transform: scale($scale, $scale);
+    &:hover {
+        cursor: pointer;
+        transition: all $transition-speed-normal;
+        transform: scale($scale, $scale);
+    }
 }
