@@ -459,6 +459,10 @@ body {
         &:hover {
             transform: scale(1.2, 1.2);
         }
+
+        &--selected {
+            border: 3px solid $color-grey-dark;
+        }
     }
 }
 

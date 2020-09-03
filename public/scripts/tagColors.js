@@ -1,5 +1,10 @@
-let tagColors = document.querySelector('.dropdown__tag-colors');
+// Get the container of the colors
+let dropdownColors = document.querySelector('.dropdown__colors');
 
-tagColors.addEventListener('click', (event) => {
-    event.target.style = 'background-color: red';
+// Add eventlistener to the container
+dropdownColors.addEventListener('click', (event) => {
+    let target = event.target;
+    if (target.classList.contains('dropdown__circle')) {
+        target.classList.toggle('dropdown__circle--selected');
+    }
 })

@@ -343,6 +343,8 @@ body {
     border-radius: 50%; }
     .dropdown__circle:hover {
       transform: scale(1.2, 1.2); }
+    .dropdown__circle--selected {
+      border: 3px solid #333333; }
 
 .dropdown:hover {
   cursor: pointer;
