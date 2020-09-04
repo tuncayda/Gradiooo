@@ -12,7 +12,13 @@
     font-size: $fs-small;
     color: $color-grey-dark;
     z-index: 900;
+    transition: all $transition-speed-normal;
     cursor: pointer;
+
+    &:hover {
+        transition: all $transition-speed-normal;
+        transform: translate(-50%, 4%);
+    }
 }
 
 .logo {

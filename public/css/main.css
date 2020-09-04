@@ -407,7 +407,11 @@ body {
   font-size: 1.6rem;
   color: #333333;
   z-index: 900;
+  transition: all 0.3s;
   cursor: pointer; }
+  .load-more__button:hover {
+    transition: all 0.3s;
+    transform: translate(-50%, 4%); }
 
 .logo {
   display: flex;
