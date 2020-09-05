@@ -15,17 +15,17 @@ const colorSchema = new mongoose.Schema({
     },
     colorTag: {
         type: String,
-        required: true,
+        required: false,
         enum: ['red', "orange", "yellow", 'green', 'turquoise', 'blue', 'magenta', 'white', 'black']
     },
     type: {
         type: String,
-        required: true,
+        required: false,
         enum : ['gradient', 'solid', 'mesh']
     },
     colors: {
         type: [String],
-        required: true
+        required: false
     },
     created: {
         type: Date,

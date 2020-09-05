@@ -225,7 +225,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
     &.column {
         @media (min-width: 1000px) {
             flex-direction: row;

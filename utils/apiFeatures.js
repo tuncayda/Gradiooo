@@ -45,7 +45,7 @@ class APIFeatures {
     }
 
     // Build query to paginate
-    paginate(defaultLimit = 2, defaultPage = 1) {
+    paginate(defaultLimit = 20, defaultPage = 1) {
 
         const page = this.queryString.page * 1 || defaultPage;
         const limit = this.queryString.limit * 1 || defaultLimit;
