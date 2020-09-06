@@ -32,3 +32,7 @@ body {
     opacity: 0%;
     transition: all $transition-speed-normal;
 }
+
+.remove {
+    display: none;
+}

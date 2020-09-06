@@ -13,7 +13,7 @@ const colorSchema = new mongoose.Schema({
         minlength: 1,
         maxlength: [30, 'Maximum 30 charachters']
     },
-    colorTag: {
+    tag: {
         type: String,
         required: false,
         enum: ['red', "orange", "yellow", 'green', 'turquoise', 'blue', 'magenta', 'white', 'black']

@@ -25,6 +25,9 @@ body {
   opacity: 0%;
   transition: all 0.3s; }
 
+.remove {
+  display: none; }
+
 body {
   background-color: #F8f8f8; }
 
