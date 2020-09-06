@@ -3,7 +3,7 @@ block colors
   main.main__content(id='main__content')
 
     each color in colors
-      .color(id=`${color._id}` data-tag=`${color.tag}`)
+      .color(id=`${color._id}` data-tag=`${color.tag}` data-shape=`${color.type}`)
         p.color__title
           | #{color.title}
         .color__container
