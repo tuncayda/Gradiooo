@@ -9,15 +9,15 @@
       p.toolbar__icon-text Shape
       ul.dropdown__content
         .dropdown__items
-          .dropdown__item
+          .dropdown__item(data-shape='gradient')
             //- img(src='./img/solid.svg' alt='Solid color icon')
-            span Gradient
-          .dropdown__item
+            span(data-shape='gradient') Gradient
+          .dropdown__item(data-shape='solid')
             //- img(src='./img/mesh.svg' alt='Mesh icon')
-            span Solid
-          .dropdown__item
-            //- img(src='./img/mesh.svg' alt='Mesh icon')
-            span All
+            span(data-shape='solid') Solid
+          //- .dropdown__item(data-shape='all')
+          //-   //- img(src='./img/mesh.svg' alt='Mesh icon')
+          //-   span(data-shape='all') All
     li.dropdown.dropdown__tag-colors
       a
         img.toolbar__icon(src='./img/color.svg' alt='Color icon')
@@ -47,8 +47,8 @@
         img.toolbar__icon(src='./img/column.svg' alt='Column icon')
       p.toolbar__icon-text View
       ul.dropdown__content
-        .dropdown__items
-          .dropdown__item(onclick='rowView()')
+        .dropdown__items#colorView
+          .dropdown__item(onclick='rowView()' class='dropdown__item--selected')
             //- img(src='./img/row.svg' alt='Solid color icon')
             span Row
           .dropdown__item(onclick='columnView()')

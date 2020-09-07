@@ -424,6 +424,10 @@ body {
         &:hover {
             background-color: $color-grey-lighter;
         }
+
+        &--selected {
+            background-color: rgb(181, 181, 181);
+        }
     }
 
     &__colors {
