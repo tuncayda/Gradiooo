@@ -19,20 +19,20 @@ block colors
               .color__side--divider
               a.color__downloads.scale(onclick='canvasToImg(this, "png");')
                 img(src='../img/download.svg' alt='Download icon')
-    else
-      .color(id=`${color._id}` data-tag=`${color.tag}` data-shape=`${color.type}`)
-        p.color__title
-          | #{color.colors.length}
-        .color__container
-          .color__shape(onclick='openOverlay(this)' style='background-image: linear-gradient(to bottom, #' + `${color.colors[0]}` + ',#' + `${color.colors[1]}` + ')')
-          .color__side
-            .color__hexcodes
-              span.color__hexcode(onmouseover='colorMouseOver(this);' onmouseout='colorMouseOut(this);' onclick='copyHex(this);') #{color.colors[0]}
-              span.color__hexcode(onmouseover='colorMouseOver(this);' onmouseout='colorMouseOut(this);' onclick='copyHex(this);') #{color.colors[1]}
-            .color__side--divider
-            .color__likes.scale
-              img(src='../img/likes.svg' alt='Likes icon' class='like' onclick="likeColor(this)")
-            .color__side--divider
-            a.color__downloads.scale(onclick='canvasToImg(this, "png");')
-              img(src='../img/download.svg' alt='Download icon')
-    
+      else
+        .color(id=`${color._id}` data-tag=`${color.tag}` data-shape=`${color.type}`)
+          p.color__title
+            | #{color.title}
+          .color__container
+            .color__shape(onclick='openOverlay(this, "solid")' style='background-color: #' + `${color.colors[0]}`)
+            .color__side
+              .color__hexcodes
+                span.color__hexcode(onmouseover='colorMouseOver(this);' onmouseout='colorMouseOut(this);' onclick='copyHex(this);') #{color.colors[0]}
+                span.color__hexcode(onmouseover='colorMouseOver(this);' onmouseout='colorMouseOut(this);' onclick='copyHex(this);') #{color.colors[1]}
+              .color__side--divider
+              .color__likes.scale
+                img(src='../img/likes.svg' alt='Likes icon' class='like' onclick="likeColor(this)")
+              .color__side--divider
+              a.color__downloads.scale(onclick='canvasToImg(this, "png");')
+                img(src='../img/download.svg' alt='Download icon')
+      

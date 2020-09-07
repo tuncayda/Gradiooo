@@ -2,10 +2,16 @@
 /**
  * When user clicks on a color, it will expand to fullscreen
  */
-function openOverlay(e) {
+function openOverlay(e, type) {
     const overlay = document.getElementById('overlay');
     overlay.classList.add('overlay');
-    overlay.style.backgroundImage = e.style.backgroundImage;
+    if (type === 'solid') {
+        overlay.style.backgroundImage = '';
+        overlay.style.backgroundColor = e.style.backgroundColor;   
+    } else {
+        overlay.style.backgroundColor = '';
+        overlay.style.backgroundImage = e.style.backgroundImage;
+    }
 
     // Prevent background (body) from scrolling when modal is open
     document.querySelector("body").style.overflow = 'hidden';
