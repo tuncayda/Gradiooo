@@ -102,14 +102,14 @@ function addInit(id, obj) {
             likesCount.textContent = likesList.size;
             let likesDropdown = document.getElementById('likes-list');
             let listItem;
-            if (obj.hexcodes.size) {
+            if (obj.hexcodes[1] === '') {
                 listItem = `
                 <div class='toolbar-likes__list-item' id='${id}'>
                     <span class='toolbar-likes__list-item--title'>${obj.title}</span>
                     <div class='toolbar-likes__list-item--hexcodes'>
-                        <span class='toolbar-likes__likes-item--hexcode'>#${obj.hexcodes[0]} #${obj.hexcodes[1]}</span>
+                        <span class='toolbar-likes__likes-item--hexcode'>#${obj.hexcodes[0]}</span>
                     </div>
-                    <div class='toolbar-likes__list-item--color' style='background: ${obj.color}'></div>
+                    <div class='toolbar-likes__list-item--color' style='background-color: #${obj.hexcodes[0]}'></div>
                     <div class='toolbar-likes__list-item--delete' onclick='deleteItem(this)' title='Remove color'>
                         <span class='delete-icon'>&#10005;</span>
                     </div>
@@ -120,7 +120,7 @@ function addInit(id, obj) {
                 <div class='toolbar-likes__list-item' id='${id}'>
                     <span class='toolbar-likes__list-item--title'>${obj.title}</span>
                     <div class='toolbar-likes__list-item--hexcodes'>
-                        <span class='toolbar-likes__likes-item--hexcode'>#${obj.hexcodes[0]}</span>
+                        <span class='toolbar-likes__likes-item--hexcode'>#${obj.hexcodes[0]} #${obj.hexcodes[1]}</span>
                     </div>
                     <div class='toolbar-likes__list-item--color' style='background: ${obj.color}'></div>
                     <div class='toolbar-likes__list-item--delete' onclick='deleteItem(this)' title='Remove color'>
@@ -159,18 +159,34 @@ function addToList(color) {
                 likesCount.textContent = likesList.size;
             }
             let likesDropdown = document.getElementById('likes-list');
-            const listItem = `
-            <div class='toolbar-likes__list-item' id='${color.id}'>
-                <span class='toolbar-likes__list-item--title'>${obj.title}</span>
-                <div class='toolbar-likes__list-item--hexcodes'>
-                    <span class='toolbar-likes__likes-item--hexcode'>#${obj.hexcodes[0]} #${obj.hexcodes[1]}</span>
+            let listItem;
+            if (obj.hexcodes[1] === '') {
+                listItem = `
+                <div class='toolbar-likes__list-item' id='${color.id}'>
+                    <span class='toolbar-likes__list-item--title'>${obj.title}</span>
+                    <div class='toolbar-likes__list-item--hexcodes'>
+                        <span class='toolbar-likes__likes-item--hexcode'>#${obj.hexcodes[0]}</span>
+                    </div>
+                    <div class='toolbar-likes__list-item--color' style='background-color: #${obj.hexcodes[0]}'></div>
+                    <div class='toolbar-likes__list-item--delete' onclick='deleteItem(this)'>
+                        <span class='delete-icon'>&#10005;</span>
+                    </div>
                 </div>
-                <div class='toolbar-likes__list-item--color' style='background: ${obj.color}'></div>
-                <div class='toolbar-likes__list-item--delete' onclick='deleteItem(this)'>
-                    <span class='delete-icon'>&#10005;</span>
+                `;
+            } else {
+                listItem = `
+                <div class='toolbar-likes__list-item' id='${color.id}'>
+                    <span class='toolbar-likes__list-item--title'>${obj.title}</span>
+                    <div class='toolbar-likes__list-item--hexcodes'>
+                        <span class='toolbar-likes__likes-item--hexcode'>#${obj.hexcodes[0]} #${obj.hexcodes[1]}</span>
+                    </div>
+                    <div class='toolbar-likes__list-item--color' style='background: ${obj.color}'></div>
+                    <div class='toolbar-likes__list-item--delete' onclick='deleteItem(this)'>
+                        <span class='delete-icon'>&#10005;</span>
+                    </div>
                 </div>
-            </div>
-            `;
+                `;
+            }
             likesDropdown.insertAdjacentHTML('beforeend', listItem);
         }
         color.getElementsByClassName('like')[0].src = '../img/likes-clicked.svg';
