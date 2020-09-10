@@ -325,7 +325,8 @@ body {
     .dropdown__item:hover {
       background-color: #E0DDDD; }
     .dropdown__item--selected {
-      background-color: #b5b5b5; }
+      transition: background-color 0.3s;
+      background-color: #aeaeae6d; }
   .dropdown__colors {
     display: flex;
     padding: 0 2rem; }

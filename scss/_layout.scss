@@ -426,7 +426,8 @@ body {
         }
 
         &--selected {
-            background-color: rgb(181, 181, 181);
+            transition: background-color $transition-speed-normal;
+            background-color: #aeaeae6d;
         }
     }
 
