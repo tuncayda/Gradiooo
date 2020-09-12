@@ -15,11 +15,11 @@ function rowView() {
     localStorage.removeItem('view');
 }
 
-let colorView = document.getElementById('colorView');
-colorView.addEventListener('click', e => {
-    let dropdownItem = e.target.closest('.dropdown__item');
-    dropdownItem.parentNode.childNodes.forEach(e => {
-        e.classList.remove('dropdown__item--selected');
-    });
-    dropdownItem.classList.toggle('dropdown__item--selected');
-})
+// let colorView = document.getElementById('colorView');
+// colorView.addEventListener('click', e => {
+//     let dropdownItem = e.target.closest('.dropdown__item');
+//     dropdownItem.parentNode.childNodes.forEach(e => {
+//         e.classList.remove('dropdown__item--selected');
+//     });
+//     dropdownItem.classList.toggle('dropdown__item--selected');
+// })
