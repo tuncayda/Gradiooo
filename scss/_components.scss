@@ -38,6 +38,16 @@
         font-weight: 400;
         color: $color-grey-dark;
     }
+
+    &-text {
+        margin-left: 1.4rem;
+        font-family: 'Pacifico', sans-serif;
+        font-size: 48px;
+        font-weight: 400;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: linear-gradient(to right, #071417, #216d7c);
+    }
 }
 
 .overlay {
