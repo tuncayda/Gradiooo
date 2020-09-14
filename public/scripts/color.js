@@ -36,7 +36,6 @@ function colorMouseOut(e) {
 
 
 function onclickMessage(node) {
-    console.log(node);
 }
 /**
  * Copy hexcode tu users clipboard

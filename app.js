@@ -2,7 +2,9 @@ const path = require('path');
 const morgan = require('morgan');
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const compression = require('compression');
+
 
 const colorRouter = require('./routes/colorRoutes');
 const userRouter = require('./routes/userRoutes');
@@ -25,6 +27,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 if(process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
+
+// Compress data sent to client
+app.use(compression());
 
 // Mounting routers to endpoints
 app.use('/', viewRouter);

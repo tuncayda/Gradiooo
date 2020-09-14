@@ -7,7 +7,6 @@ const router = express.Router();
 
 // Router with parameter
 router.param('id', (req, res, next, val) => {
-    console.log(`Tour id is ${val}`);
     next();
 });
 

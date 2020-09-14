@@ -10,7 +10,8 @@ const likeColor = async (element) => {
 
     await axios({
         method: 'post',
-        url: 'http://localhost:8080/api/v1/colors/like',
+        url: '/api/v1/colors/like',
+        // url: 'http://localhost:8080/api/v1/colors/like',
         headers: {
             'Content-Type': 'application/json'
         },
