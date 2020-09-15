@@ -1,0 +1,75 @@
+#toolbar.toolbar.hidden
+  .toolbar__logo
+  a
+    //- img.toolbar__logo--icon(src='../img/gradiooo.svg' alt='The logo of Gradiooo')
+  span.toolbar__logo--text GRADIOOO
+  ul.toolbar__icons
+    //- li.dropdown#shapes
+    //-   a
+    //-     img.toolbar__icon(src='./img/gradient.svg' alt='Gradient icon')
+    //-   p.toolbar__icon-text Shape
+    //-   ul.dropdown__content
+    //-     .dropdown__items
+    //-       .dropdown__item(data-shape='gradient')
+    //-         //- img(src='./img/solid.svg' alt='Solid color icon')
+    //-         span(data-shape='gradient') Gradient
+    //-       .dropdown__item(data-shape='solid')
+    //-         //- img(src='./img/mesh.svg' alt='Mesh icon')
+    //-         span(data-shape='solid') Solid
+    //-       //- .dropdown__item(data-shape='all')
+    //-       //-   //- img(src='./img/mesh.svg' alt='Mesh icon')
+    //-       //-   span(data-shape='all') All
+    li.dropdown.dropdown__tag-colors
+      a
+        img.toolbar__icon(src='./img/color.svg' alt='Color icon')
+      p.toolbar__icon-text Color
+      ul.dropdown__content(style='width: auto;')
+        .dropdown__colors
+          .dropdown__color
+            #red.dropdown__circle
+          .dropdown__color
+            #orange.dropdown__circle
+          .dropdown__color
+            #yellow.dropdown__circle
+          .dropdown__color
+            #green.dropdown__circle
+          .dropdown__color
+            #turquoise.dropdown__circle
+          .dropdown__color
+            #blue.dropdown__circle
+          .dropdown__color
+            #magenta.dropdown__circle
+          .dropdown__color
+            #white.dropdown__circle
+          .dropdown__color
+            #black.dropdown__circle
+    li.dropdown
+      a()
+        img.toolbar__icon(src='./img/column.svg' alt='Column icon')
+      p.toolbar__icon-text View
+      ul.dropdown__content
+        .dropdown__items#colorView
+          .dropdown__item(onclick='rowView()')
+            //- img(src='./img/row.svg' alt='Solid color icon')
+            span Row
+          .dropdown__item(onclick='columnView()')
+            //- img(src='./img/row.svg' alt='Solid color icon')
+            span Column
+    //- li.dropdown
+    //-   a(href='#')
+    //-     img.toolbar__icon(src='./img/sort.svg' alt='Sort icon')
+    //-   p.toolbar__icon-text Sort
+    //-   ul.dropdown__content
+    //-     .dropdown__items
+    //-       .dropdown__item
+    //-         span Popularity
+    //-       .dropdown__item
+    //-         span Rating
+  .toolbar-likes(onclick='toggleLikesList()' id='toolbarLikes')
+    span(class='toolbar-likes__number' id='likesCount')
+    img(class='toolbar-likes__icon' src='../img/heart.svg' alt='Saved colors' id='heart-icon')
+  .toolbar-likes__list(id='likes-list' class='hidden')
+    //- div
+    //-   span.toolbar-likes__list-clear Clear all
+    //- .toolbar-likes__list--clear
+  // Add "Download all colors" functionality to the list
