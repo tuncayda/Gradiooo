@@ -4,8 +4,9 @@
   "description": "The source of inspiration for beautiful gradients",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
+    "dev": "npm run watch-scss & nodemon server.js",
     "watch-scss": "node-sass --watch scss -o public/css",
-    "start": "npm run watch-scss & nodemon server.js",
     "start:prod": "NODE_ENV=production nodemon server.js"
   },
   "author": "Tuncay Dagdelen",
@@ -30,5 +31,8 @@
   "devDependencies": {
     "nodemon": "^2.0.4",
     "webpack": "^4.43.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
