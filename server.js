@@ -17,3 +17,10 @@ const port = process.env.PORT || 8080;
 app.listen(port, function() {
     console.log(`Listening on port ${port}`);
 });
+
+process.on('SIGTERM', () => {
+    console.log('SIGTERM received. Shutting down gracefully');
+    server.close(() => {
+        console.log('Process terminated!')
+    });
+});
