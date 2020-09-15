@@ -1,6 +1,6 @@
 // Count how many pages the users has clicked for the pagination
 let page = 1;
-let limit = 10;
+let limit = 100;
 
 const likeColor = async (element) => {
     const color = element.parentNode.parentNode.parentNode.parentNode;
