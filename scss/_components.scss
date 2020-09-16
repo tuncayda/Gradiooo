@@ -1,42 +1,5 @@
 @import "variables";
 
-.cookies {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    width: 100vw;
-    height: 6rem;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0,0,0,.8);
-    box-shadow: 0 -8px 12px rgba(0,0,0,.40);
-    z-index: 1100;
-
-    &__message {
-        font-size: $fs-small;
-        color: $color-grey-lighter;
-    }
-
-    &__button {
-        cursor: pointer;
-        width: 6rem;
-        background-color: #90CEDC;
-        margin-left: 2rem;
-        border-radius: 18px;
-        
-        &:hover {
-            background-color: rgba(#90CEDC, 0.8);
-        }
-
-        & > p {
-            text-align: center;
-            font-size: $fs-small;
-        }
-    }
-}
-
 .load-more__button {
     width: 50%;
     height: 6rem;
