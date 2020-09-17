@@ -8,7 +8,8 @@ exports.getColors = async (req, res) => {
             .filter()
             .sort()
             .limitFields()
-            .paginate(req.query.limit, req.query.page);
+            .paginate(200, req.query.page);
+            // .paginate(req.query.limit, req.query.page);
         const colors = await features.query;
 
         if(req.query.limit || req.query.page) {
