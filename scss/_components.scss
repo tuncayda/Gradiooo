@@ -26,7 +26,6 @@
     flex-direction: column;
     align-items: center;
     animation: fade-top-bottom-bounce 2s;
-    // animation: fade-top-bottom 2s;
     
     &-image {
         width: 7.5rem;
@@ -45,6 +44,7 @@
         font-size: 48px;
         font-weight: 400;
         -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
         background-image: linear-gradient(to right, #071417, #216d7c);
     }
@@ -95,7 +95,6 @@
 
 #blue {
     background-color: #7b95cf;
-    // background-color: #5596F8;
 }
 
 #magenta {

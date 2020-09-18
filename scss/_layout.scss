@@ -81,25 +81,6 @@ body {
                 max-height: 20rem !important;
             }
 
-            // @media (max-width: 1120px) {
-            //     background-color: $color-white;
-            // }
-
-            // &--clear {
-            //     color: $color-grey-dark;
-            //     margin-top: 1rem;
-            //     margin-bottom: 1rem;
-            //     margin-left: 2rem;
-
-            //     & > span {
-            //         cursor: pointer;
-
-            //         &:hover {
-            //             color: $color-primary;
-            //         }
-            //     }
-            // }
-
             &-item {
                 position: relative;
                 display: flex;
@@ -331,7 +312,6 @@ body {
     &__shape {
         width: 80%;
         height: 32.4rem;
-        // background-image: linear-gradient(to bottom, rgba(0, 245, 160, 1), rgba(0, 217, 245, 1));
         border-radius: 2rem;
         margin-left: 3.2rem;
         margin-top: 2.2rem;
@@ -339,7 +319,6 @@ body {
         transition: all $transition-speed-normal;
 
         &:hover {
-            // box-shadow: 2px 2px 16px rgba(0,0,20,.15);
             transform: scale(1.01);
             transition: all $transition-speed-normal;
         }
