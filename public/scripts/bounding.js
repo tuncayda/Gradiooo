@@ -7,6 +7,9 @@ let toolbar = document.getElementById('toolbar');
 
 window.onscroll = function() {
     var currentPos = window.pageYOffset;
+    if (currentPos > 900) {
+        document.querySelector('.landing-page').style = 'display: none';
+    }
     if (prevPos > currentPos) {
         element.style.top = '0';
         element.style.opacity = '95%';
