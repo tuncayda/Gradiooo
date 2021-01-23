@@ -232,7 +232,6 @@ body {
     .color {
       position: relative; } }
   .color__hexcode {
-    border-bottom: 2px solid transparent;
     cursor: pointer; }
   @media (max-width: 1120px) {
     .color__downloads {

@@ -1,9 +1,7 @@
 const Color = require('./../models/colorModel');
 const APIFeatures = require('./../utils/apiFeatures');
 
-/**
- * Return all colors from db
- */
+// Handlers
 exports.getAllColors = async (req, res) => {
     try {
         // Execute query
@@ -28,18 +26,6 @@ exports.getAllColors = async (req, res) => {
     }
 };
 
-exports.likeColor = async (req, res) => {
-    try {
-        const color = await Color.findById(req.body.id);
-        color.rating = color.rating + 1;
-        color.save({ validateBeforeSave: false });
-        res.status(200).end();
-    } catch (err) {
-        res.send(err);
-    }
-}
-
-/**
 exports.getColor = async (req, res) => {
     try {
         const color = await Color.findById(req.params.id);
@@ -108,4 +94,14 @@ exports.deleteColor = async (req, res) => {
         });
     }
 };
-*/
+
+exports.likeColor = async (req, res) => {
+    try {
+        const color = await Color.findById(req.body.id);
+        color.rating = color.rating + 1;
+        color.save({ validateBeforeSave: false });
+        res.status(200).end();
+    } catch (err) {
+        res.send(err);
+    }
+}

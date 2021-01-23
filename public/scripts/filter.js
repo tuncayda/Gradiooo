@@ -1,4 +1,3 @@
-// The colors in the "Color" dropdown
 let dropdownColors = document.querySelectorAll('.dropdown__circle');
 dropdownColors.forEach(e => {
     e.addEventListener('click', tag => {
@@ -8,9 +7,6 @@ dropdownColors.forEach(e => {
 
 let filtered = new Array();
 
-/**
- * Filter on one or multiple colors
- */
 function filterColor(color, e) {
     if (!filtered.includes(color.target.id)) {
         filtered.push(color.target.id);
