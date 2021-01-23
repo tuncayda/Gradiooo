@@ -31,12 +31,9 @@ function colorMouseOver(e) {
 }
 
 function colorMouseOut(e) {
-    e.style.borderBottom = "none";
+    e.style.borderBottom = "2px solid transparent";
 }
 
-
-function onclickMessage(node) {
-}
 /**
  * Copy hexcode tu users clipboard
  * Show confirmation after user clicks on hexcode

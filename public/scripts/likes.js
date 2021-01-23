@@ -1,9 +1,16 @@
+/**
+ * The likes list contains all the colors that the user has liked
+ */
+
 let likes = 0;
 let likesList = new Map();
 
 let toolbarLikes = document.querySelector('.toolbar-likes');
 let likesDropdown = document.querySelector('.toolbar-likes__list');
 
+/**
+ * Check whether the user has clicked inside the liked list or not
+ */
 document.addEventListener('click', event => {
     let target = event.target;
     if (
@@ -23,10 +30,14 @@ document.addEventListener('click', event => {
     }
 })
 
+// If the user has not liked any colors, hide the likes list
 if (likes === 0) {
     toolbarLikes.classList.add('hidden');
 }
 
+/**
+ * Toggle the likes list
+ */
 function toggleLikesList() {
     let likesList = document.querySelector('.toolbar-likes__list');
 
@@ -41,6 +52,9 @@ function toggleLikesList() {
     }
 }
 
+/**
+ * Truncate the color names inside the likes list
+ */
 function truncateString(str, num) {
     if (str.length <= num) {
         return str;
@@ -89,6 +103,9 @@ for (let i = 0; i < localStorage.length; i++) {
     addInit(id, JSON.parse(localStorage.getItem(id)));
 }
 
+/**
+ * Add the colors to the view on initial page load
+ */
 function addInit(id, obj) {
     if (!likesList.has(id)) {
         let toolbarLikes = document.querySelector('.toolbar-likes');
@@ -141,6 +158,9 @@ function addInit(id, obj) {
     }
 }
 
+/**
+ * If the user likes a color, add that to the likes list
+ */
 function addToList(color) {
     if (!likesList.has(color.id)) {
         let toolbarLikes = document.querySelector('.toolbar-likes');

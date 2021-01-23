@@ -1,14 +1,15 @@
 let LOGO_ID = 'toolbar';
 let element = document.getElementById(LOGO_ID);
 
-// Hide toolbar on scroll down, show on scroll up
+/**
+ * Hide toolbar on scroll down, show on scroll up
+ */
 var prevPos = window.pageYOffset;
 let toolbar = document.getElementById('toolbar');
 
 window.onscroll = function() {
     var currentPos = window.pageYOffset;
     if (currentPos > 900) {
-        window.scroll(0, -50);
         document.querySelector('.landing-page').style = 'display: none';
     }
     if (prevPos > currentPos) {
@@ -19,7 +20,9 @@ window.onscroll = function() {
     }
     prevPos = currentPos;
 }
-
+/**
+ * If element is in viewport, fade in that element
+ */
 window.addEventListener('scroll', function(event) {
     if (isInViewport(element)) {
         element.classList.remove('hidden');
