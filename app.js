@@ -5,9 +5,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const compression = require('compression');
 
-
+// Routes
 const colorRouter = require('./routes/colorRoutes');
-const userRouter = require('./routes/userRoutes');
 const viewRouter = require('./routes/viewRoutes');
 
 const app = express();
@@ -33,7 +32,6 @@ app.use(compression());
 
 // Mounting routers to endpoints
 app.use('/', viewRouter);
-app.use('/api/v1/users', userRouter);
 app.use('/api/v1/colors', colorRouter);
 
 module.exports = app;

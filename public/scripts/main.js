@@ -2,6 +2,9 @@
 let page = 1;
 let limit = 100;
 
+/**
+ * The user has clicked like on a color
+ */
 const likeColor = async (element) => {
     const color = element.parentNode.parentNode.parentNode.parentNode;
     const colorID = color.id;

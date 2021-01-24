@@ -1,4 +1,3 @@
-
 /**
  * When user clicks on a color, it will expand to fullscreen
  */
@@ -34,9 +33,6 @@ function colorMouseOut(e) {
     e.style.borderBottom = "none";
 }
 
-
-function onclickMessage(node) {
-}
 /**
  * Copy hexcode tu users clipboard
  * Show confirmation after user clicks on hexcode

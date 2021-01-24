@@ -18,6 +18,7 @@ app.listen(port, function() {
     console.log(`Listening on port ${port}`);
 });
 
+// Shut down the app gracefully
 process.on('SIGTERM', () => {
     console.log('SIGTERM received. Shutting down gracefully');
     server.close(() => {

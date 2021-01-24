@@ -1,7 +1,10 @@
+/**
+ * Hide toolbar on scroll down, show on scroll up
+ */
+
 let LOGO_ID = 'toolbar';
 let element = document.getElementById(LOGO_ID);
 
-// Hide toolbar on scroll down, show on scroll up
 var prevPos = window.pageYOffset;
 let toolbar = document.getElementById('toolbar');
 
